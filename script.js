@@ -1,48 +1,48 @@
-// 1ë¶??„° 40ê¹Œì???˜ ?ˆ«??— ????•œ ?°?´?„° êµ¬ì"
+// 1ë¶€í„° 40ê¹Œì§€ì˜ ìˆ«ìì™€ í˜•ì‹ ë°ì´í„° êµ¬ì¡°
 const numbersData = [
-    { value: 1, formats: ['1', 'one', '?¼'] },
-    { value: 2, formats: ['2', 'two', '?´'] },
-    { value: 3, formats: ['3', 'three', '?‚¼'] },
-    { value: 4, formats: ['4', 'four', '?‚¬'] },
-    { value: 5, formats: ['5', 'five', '?˜¤'] },
-    { value: 6, formats: ['6', 'six', '?œ¡'] },
-    { value: 7, formats: ['7', 'seven', 'ì¹?'] },
-    { value: 8, formats: ['8', 'eight', '?Œ”'] },
-    { value: 9, formats: ['9', 'nine', 'êµ?'] },
-    { value: 10, formats: ['10', 'ten', '?‹­'] },
-    { value: 11, formats: ['11', 'eleven', '?‹­?¼'] },
-    { value: 12, formats: ['12', 'twelve', '?‹­?´'] },
-    { value: 13, formats: ['13', 'thirteen', '?‹­?‚¼'] },
-    { value: 14, formats: ['14', 'fourteen', '?‹­?‚¬'] },
-    { value: 15, formats: ['15', 'fifteen', '?‹­?˜¤'] },
-    { value: 16, formats: ['16', 'sixteen', '?‹­?œ¡'] },
-    { value: 17, formats: ['17', 'seventeen', '?‹­ì¹?'] },
-    { value: 18, formats: ['18', 'eighteen', '?‹­?Œ”'] },
-    { value: 19, formats: ['19', 'nineteen', '?‹­êµ?'] },
-    { value: 20, formats: ['20', 'twenty', '?´?‹­'] },
-    { value: 21, formats: ['21', 'twenty-one', '?´?‹­?¼'] },
-    { value: 22, formats: ['22', 'twenty-two', '?´?‹­?´'] },
-    { value: 23, formats: ['23', 'twenty-three', '?´?‹­?‚¼'] },
-    { value: 24, formats: ['24', 'twenty-four', '?´?‹­?‚¬'] },
-    { value: 25, formats: ['25', 'twenty-five', '?´?‹­?˜¤'] },
-    { value: 26, formats: ['26', 'twenty-six', '?´?‹­?œ¡'] },
-    { value: 27, formats: ['27', 'twenty-seven', '?´?‹­ì¹?'] },
-    { value: 28, formats: ['28', 'twenty-eight', '?´?‹­?Œ”'] },
-    { value: 29, formats: ['29', 'twenty-nine', '?´?‹­êµ?'] },
-    { value: 30, formats: ['30', 'thirty', '?‚¼?‹­'] },
-    { value: 31, formats: ['31', 'thirty-one', '?‚¼?‹­?¼'] },
-    { value: 32, formats: ['32', 'thirty-two', '?‚¼?‹­?´'] },
-    { value: 33, formats: ['33', 'thirty-three', '?‚¼?‹­?‚¼'] },
-    { value: 34, formats: ['34', 'thirty-four', '?‚¼?‹­?‚¬'] },
-    { value: 35, formats: ['35', 'thirty-five', '?‚¼?‹­?˜¤'] },
-    { value: 36, formats: ['36', 'thirty-six', '?‚¼?‹­?œ¡'] },
-    { value: 37, formats: ['37', 'thirty-seven', '?‚¼?‹­ì¹?'] },
-    { value: 38, formats: ['38', 'thirty-eight', '?‚¼?‹­?Œ”'] },
-    { value: 39, formats: ['39', 'thirty-nine', '?‚¼?‹­êµ?'] },
-    { value: 40, formats: ['40', 'forty', '?‚¬?‹­'] }
+    { value: 1, formats: ['1', 'one', 'ì¼'] },
+    { value: 2, formats: ['2', 'two', 'ì´'] },
+    { value: 3, formats: ['3', 'three', 'ì‚¼'] },
+    { value: 4, formats: ['4', 'four', 'ì‚¬'] },
+    { value: 5, formats: ['5', 'five', 'ì˜¤'] },
+    { value: 6, formats: ['6', 'six', 'ìœ¡'] },
+    { value: 7, formats: ['7', 'seven', 'ì¹ '] },
+    { value: 8, formats: ['8', 'eight', 'íŒ”'] },
+    { value: 9, formats: ['9', 'nine', 'êµ¬'] },
+    { value: 10, formats: ['10', 'ten', 'ì‹­'] },
+    { value: 11, formats: ['11', 'eleven', 'ì‹­ì¼'] },
+    { value: 12, formats: ['12', 'twelve', 'ì‹­ì´'] },
+    { value: 13, formats: ['13', 'thirteen', 'ì‹­ì‚¼'] },
+    { value: 14, formats: ['14', 'fourteen', 'ì‹­ì‚¬'] },
+    { value: 15, formats: ['15', 'fifteen', 'ì‹­ì˜¤'] },
+    { value: 16, formats: ['16', 'sixteen', 'ì‹­ìœ¡'] },
+    { value: 17, formats: ['17', 'seventeen', 'ì‹­ì¹ '] },
+    { value: 18, formats: ['18', 'eighteen', 'ì‹­íŒ”'] },
+    { value: 19, formats: ['19', 'nineteen', 'ì‹­êµ¬'] },
+    { value: 20, formats: ['20', 'twenty', 'ì´ì‹­'] },
+    { value: 21, formats: ['21', 'twenty-one', 'ì´ì‹­ì¼'] },
+    { value: 22, formats: ['22', 'twenty-two', 'ì´ì‹­ì´'] },
+    { value: 23, formats: ['23', 'twenty-three', 'ì´ì‹­ì‚¼'] },
+    { value: 24, formats: ['24', 'twenty-four', 'ì´ì‹­ì‚¬'] },
+    { value: 25, formats: ['25', 'twenty-five', 'ì´ì‹­ì˜¤'] },
+    { value: 26, formats: ['26', 'twenty-six', 'ì´ì‹­ìœ¡'] },
+    { value: 27, formats: ['27', 'twenty-seven', 'ì´ì‹­ì¹ '] },
+    { value: 28, formats: ['28', 'twenty-eight', 'ì´ì‹­íŒ”'] },
+    { value: 29, formats: ['29', 'twenty-nine', 'ì´ì‹­êµ¬'] },
+    { value: 30, formats: ['30', 'thirty', 'ì‚¼ì‹­'] },
+    { value: 31, formats: ['31', 'thirty-one', 'ì‚¼ì‹­ì¼'] },
+    { value: 32, formats: ['32', 'thirty-two', 'ì‚¼ì‹­ì´'] },
+    { value: 33, formats: ['33', 'thirty-three', 'ì‚¼ì‹­ì‚¼'] },
+    { value: 34, formats: ['34', 'thirty-four', 'ì‚¼ì‹­ì‚¬'] },
+    { value: 35, formats: ['35', 'thirty-five', 'ì‚¼ì‹­ì˜¤'] },
+    { value: 36, formats: ['36', 'thirty-six', 'ì‚¼ì‹­ìœ¡'] },
+    { value: 37, formats: ['37', 'thirty-seven', 'ì‚¼ì‹­ì¹ '] },
+    { value: 38, formats: ['38', 'thirty-eight', 'ì‚¼ì‹­íŒ”'] },
+    { value: 39, formats: ['39', 'thirty-nine', 'ì‚¼ì‹­êµ¬'] },
+    { value: 40, formats: ['40', 'forty', 'ì‚¬ì‹­'] }
 ];
 
-// ê²Œì„ ?ƒ?ƒœ ë³??ˆ˜
+// ê²Œì„ ìƒíƒœ ë³€ìˆ˜
 let gameActive = false;
 let gamePaused = false;
 let currentTarget = 1;
@@ -52,10 +52,10 @@ let totalPausedTime = 0;
 let timerInterval;
 let gameBoard;
 let numberElements = [];
-let mistakes = 0; // ???ë¦? ?šŸ?ˆ˜ ì¶”ì 
-let maxNumber = 30; // ê¸°ë³¸ ?‚œ?´?„ (ë³´í†µ)
+let mistakes = 0; // ì‹¤ìˆ˜ íšŸìˆ˜ ì¶”ì 
+let maxNumber = 30; // ê¸°ë³¸ ë‚œì´ë„ (ë³´í†µ)
 
-// DOM ?š”?†Œ?“¤
+// DOM ìš”ì†Œë“¤
 const startButton = document.getElementById('start-button');
 const pauseButton = document.getElementById('pause-button');
 const resumeButton = document.getElementById('resume-button');
@@ -70,7 +70,7 @@ const normalButton = document.getElementById('normal-button');
 const hardButton = document.getElementById('hard-button');
 const difficultyContainer = document.getElementById('difficulty-container');
 
-// ·©Å· ½Ã½ºÅÛ ¿ä¼Òµé
+// ë­í‚¹ ì‹œìŠ¤í…œ ìš”ì†Œë“¤
 const playerNameInput = document.getElementById('player-name');
 const saveScoreButton = document.getElementById('save-score-button');
 const showRankingButton = document.getElementById('show-ranking-button');
@@ -79,74 +79,74 @@ const rankingTableBody = document.getElementById('ranking-table-body');
 const closeRankingButton = document.getElementById('close-ranking-button');
 const rankingDifficultySelect = document.getElementById('ranking-difficulty');
 
-// ¸Š¸ë¡ ™”ë©? ?š”?†Œ?“¤
+// ì¸íŠ¸ë¡œ í™”ë©´ ìš”ì†Œë“¤
 const introScreen = document.getElementById('intro-screen');
 const startGameButton = document.getElementById('start-game-button');
 const easyButtonIntro = document.getElementById('easy-button-intro');
 const normalButtonIntro = document.getElementById('normal-button-intro');
 const hardButtonIntro = document.getElementById('hard-button-intro');
 
-// ¸¶Áö¸· À©µµ¿ì Å©±â ÀúÀå
+// ë§ˆì§€ë§‰ ìœˆë„ìš° í¬ê¸° ì €ì¥
 let lastWindowWidth = window.innerWidth;
 let lastWindowHeight = window.innerHeight;
-const RESIZE_THRESHOLD = 50; // Å©±â º¯È­ ¹«½Ã ÀÓ°è°ª (px)
+const RESIZE_THRESHOLD = 50; // í¬ê¸° ë³€í™” ë¬´ì‹œ ì„ê³„ê°’ (px)
 
-// ?´ë²¤íŠ¸ ë¦¬ìŠ¤?„ˆ ?„¤? •
+// ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆ ì„¤ì •
 document.addEventListener('DOMContentLoaded', () => {
     gameBoard = document.getElementById('game-board');
     
-    // ì´ˆê¸°?™” ?•¨?ˆ˜ ?˜¸ì¶?
+    // ì´ˆê¸°í™” í•¨ìˆ˜ í˜¸ì¶œ
     initGame();
     
-    // ?¸?Š¸ë¡? ?™”ë©? ?´ë²¤íŠ¸ ?„¤? •
+    // ì¸íŠ¸ë¡œ í™”ë©´ ì´ë²¤íŠ¸ ì„¤ì •
     startGameButton.addEventListener('click', startFromIntro);
     easyButtonIntro.addEventListener('click', () => setDifficultyIntro('easy'));
     normalButtonIntro.addEventListener('click', () => setDifficultyIntro('normal'));
     hardButtonIntro.addEventListener('click', () => setDifficultyIntro('hard'));
     
-    // ê²Œì„ ?”Œ? ˆ?´ ì¤? ?´ë²¤íŠ¸ ?„¤? •
+    // ê²Œì„ ì»¨íŠ¸ë¡¤ ë²„íŠ¼ ì´ë²¤íŠ¸ ì„¤ì •
     startButton.addEventListener('click', startGame);
     pauseButton.addEventListener('click', pauseGame);
     resumeButton.addEventListener('click', resumeGame);
     restartButton.addEventListener('click', confirmResetGame);
     playAgainButton.addEventListener('click', resetGame);
     
-    // ?‚œ?´?„ ë²„íŠ¼ ?´ë²¤íŠ¸ ?„¤? • (ê²Œì„ ?”Œ? ˆ?´ ì¤?)
+    // ë‚œì´ë„ ë²„íŠ¼ ì´ë²¤íŠ¸ ì„¤ì • (ê²Œì„ í™”ë©´ì—ì„œ)
     easyButton.addEventListener('click', () => setDifficulty('easy'));
     normalButton.addEventListener('click', () => setDifficulty('normal'));
     hardButton.addEventListener('click', () => setDifficulty('hard'));
     
-    // ·©Å· ½Ã½ºÅÛ ÀÌº¥Æ® ¼³Á¤
+    // ë­í‚¹ ì‹œìŠ¤í…œ ì´ë²¤íŠ¸ ì„¤ì •
     saveScoreButton.addEventListener('click', saveScore);
     showRankingButton.addEventListener('click', showRanking);
     closeRankingButton.addEventListener('click', hideRanking);
     rankingDifficultySelect.addEventListener('change', updateRankingDisplay);
     
-    // ê²Œì„ ë³´ë“œ— ?´ë²¤íŠ¸ ?œ„?„ ?„¤? •
+    // ê²Œì„ ë³´ë“œì— ì´ë²¤íŠ¸ ìœ„ì„ ì„¤ì •
     gameBoard.addEventListener('click', handleNumberClick);
 });
 
-// ê²Œì„ ì´ˆê¸°?™” ?•¨?ˆ˜
+// ê²Œì„ ì´ˆê¸°í™” í•¨ìˆ˜
 function initGame() {
-    // ê²Œì„ ê¸°ë³¸ ?„¤? • - ê´?? ¨ UI ?ˆ¨ê¸°ê¸°
+    // ê²Œì„ ê¸°ë³¸ ì„¤ì • - ê¸°ë³¸ UI ì„¤ì •
     hideGameElements();
     showIntroScreen();
     
-    // ê²°ê³¼ ?™”ë©? ê°•ì œë¡? ?ˆ¨ê¸°ê¸°
+    // ê²°ê³¼ í™”ë©´ ê°•ì œ ì´ˆê¸°í™”
     resultScreen.classList.add('hidden');
     resultScreen.style.display = 'none';
     
-    // ê²Œì„ ?ƒ?ƒœ ì´ˆê¸°?™”
+    // ê²Œì„ ìƒíƒœ ì´ˆê¸°í™”
     gameActive = false;
     gamePaused = false;
     currentTarget = 1;
     mistakes = 0;
     
-    // ????´ë¨? ì´ˆê¸°?™”
+    // íƒ€ì´ë¨¸ ì´ˆê¸°í™”
     resetTimer();
 }
 
-// ê²Œì„ ?š”?†Œ ?ˆ¨ê¸°ê¸° ?•¨?ˆ˜
+// ê²Œì„ í™”ë©´ì—ì„œ ë³´ì´ì§€ ì•ŠëŠ” ìš”ì†Œë“¤
 function hideGameElements() {
     gameBoard.style.visibility = 'hidden';
     document.querySelector('.game-header').style.visibility = 'hidden';
@@ -157,7 +157,7 @@ function hideGameElements() {
     difficultyContainer.style.display = 'none';
 }
 
-// ê²Œì„ ?š”?†Œ ?‘œ?‹œ ?•¨?ˆ˜
+// ê²Œì„ í™”ë©´ì—ì„œ ë³´ì´ëŠ” ìš”ì†Œë“¤
 function showGameElements() {
     gameBoard.style.visibility = 'visible';
     gameBoard.classList.remove('hidden');
@@ -167,24 +167,24 @@ function showGameElements() {
     difficultyContainer.classList.remove('hidden');
 }
 
-// ?¸?Š¸ë¡? ?™”ë©? ?‘œ?‹œ ?•¨?ˆ˜
+// ì¸íŠ¸ë¡œ í™”ë©´ ë³´ì´ê¸°
 function showIntroScreen() {
     introScreen.classList.remove('hidden');
 }
 
-// ?¸?Š¸ë¡? ?™”ë©? ?ˆ¨ê¸°ê¸° ?•¨?ˆ˜
+// ì¸íŠ¸ë¡œ í™”ë©´ì—ì„œ ë³´ì´ì§€ ì•Šê¸°
 function hideIntroScreen() {
     introScreen.classList.add('hidden');
 }
 
-// ?¸?Š¸ë¡? ?™”ë©´ì—?„œ ?‚œ?´?„ ?„¤? •
+// ì¸íŠ¸ë¡œ í™”ë©´ì—ì„œ ë‚œì´ë„ ì„ íƒ ì²˜ë¦¬
 function setDifficultyIntro(level) {
-    // ëª¨ë“  ?‚œ?´?„ ë²„íŠ¼?—?„œ active ?´?˜?Š¤ ? œê±?
+    // ëª¨ë“  ë‚œì´ë„ ë²„íŠ¼ ë¹„í™œì„±í™”
     easyButtonIntro.classList.remove('active');
     normalButtonIntro.classList.remove('active');
     hardButtonIntro.classList.remove('active');
     
-    // ?„ ?ƒ?•œ ?‚œ?´?„?— ?”°?¼ maxNumber ?„¤? • ë°? ë²„íŠ¼ ?™œ?„±?™”
+    // ì„ íƒëœ ë‚œì´ë„ì— ë”°ë¼ maxNumber ì„¤ì • ë° í™œì„±í™” ë²„íŠ¼ ì„¤ì •
     switch(level) {
         case 'easy':
             maxNumber = 20;
@@ -203,11 +203,11 @@ function setDifficultyIntro(level) {
             normalButtonIntro.classList.add('active');
     }
     
-    // ê²Œì„ ?™”ë©´ì˜ ?‚œ?´?„ ë²„íŠ¼?„ ?™ê¸°í™”
+    // ê²Œì„ í™”ë©´ì˜ ë‚œì´ë„ ë²„íŠ¼ ì„¤ì •
     syncDifficultyButtons(level);
 }
 
-// ê²Œì„ ?™”ë©´ì˜ ?‚œ?´?„ ë²„íŠ¼ ?™ê¸°í™”
+// ê²Œì„ í™”ë©´ì˜ ë‚œì´ë„ ë²„íŠ¼ ì„¤ì •
 function syncDifficultyButtons(level) {
     easyButton.classList.remove('active');
     normalButton.classList.remove('active');
@@ -226,31 +226,31 @@ function syncDifficultyButtons(level) {
     }
 }
 
-// ?¸?Š¸ë¡œì—?„œ ê²Œì„ ?‹œ?‘
+// ì¸íŠ¸ë¡œ í™”ë©´ì—ì„œ ê²Œì„ ì‹œì‘
 function startFromIntro() {
     hideIntroScreen();
     
-    // ê²Œì„ ë³´ë“œ ?š”?†Œ ?™•?‹¤?ˆ ?‘œ?‹œ
+    // ê²Œì„ ë³´ë“œì—ì„œ ë³´ì´ì§€ ì•ŠëŠ” ìš”ì†Œë“¤ ì œê±°
     gameBoard.classList.remove('hidden');
     gameBoard.style.visibility = 'visible';
     gameBoard.style.display = 'block';
     
     showGameElements();
     
-    // ?•½ê°? ì§??—°?‹œì¼? UIê°? ?—…?°?´?Š¸?œ ?›„ ê²Œì„ ?‹œ?‘
+    // ë¹ ë¥¸ ê²Œì„ ì‹œì‘ì„ ìœ„í•œ ì„ì‹œ ì²˜ë¦¬
     setTimeout(() => {
         startGame();
     }, 100);
 }
 
-// ?‚œ?´?„ ?„¤? • ?•¨?ˆ˜
+// ë‚œì´ë„ ì„¤ì • ì²˜ë¦¬
 function setDifficulty(level) {
-    // ëª¨ë“  ?‚œ?´?„ ë²„íŠ¼?—?„œ active ?´?˜?Š¤ ? œê±?
+    // ëª¨ë“  ë‚œì´ë„ ë²„íŠ¼ ë¹„í™œì„±í™”
     easyButton.classList.remove('active');
     normalButton.classList.remove('active');
     hardButton.classList.remove('active');
     
-    // ?„ ?ƒ?•œ ?‚œ?´?„?— ?”°?¼ maxNumber ?„¤? • ë°? ë²„íŠ¼ ?™œ?„±?™”
+    // ì„ íƒëœ ë‚œì´ë„ì— ë”°ë¼ maxNumber ì„¤ì • ë° í™œì„±í™” ë²„íŠ¼ ì„¤ì •
     switch(level) {
         case 'easy':
             maxNumber = 20;
@@ -270,43 +270,43 @@ function setDifficulty(level) {
     }
 }
 
-// ê²Œì„ ?‹œ?‘ ?•¨?ˆ˜
+// ê²Œì„ ì‹œì‘
 function startGame() {
     gameActive = true;
     gamePaused = false;
     currentTarget = 1;
-    mistakes = 0; // ½Ç¼ö Ä«¿îÅÍ ÃÊ±âÈ­
+    mistakes = 0; // ì´ˆê¸°í™”
     totalPausedTime = 0;
     currentNumberElement.textContent = currentTarget;
     
-    // ¸ğ¹ÙÀÏ¿¡¼­ ½ºÅ©·Ñ ¹æÁö
+    // ê²Œì„ í™œì„±í™” í´ë˜ìŠ¤ ì¶”ê°€
     document.body.classList.add('game-active');
     
-    // °ÔÀÓ º¸µå°¡ È®½ÇÈ÷ Ç¥½ÃµÇµµ·Ï ÇÔ
+    // ê²Œì„ ë³´ë“œì—ì„œ ë³´ì´ì§€ ì•ŠëŠ” ìš”ì†Œë“¤ ì œê±°
     gameBoard.classList.remove('hidden');
     gameBoard.style.visibility = 'visible';
     gameBoard.style.display = 'block';
     
-    // ½ÃÀÛ/ÁßÁö ¹öÆ° »óÅÂ º¯°æ
+    // ê²Œì„ ì»¨íŠ¸ë¡¤ ë²„íŠ¼ ì„¤ì •
     startButton.classList.add('hidden');
     difficultyContainer.classList.add('hidden');
     pauseButton.classList.remove('hidden');
     restartButton.classList.remove('hidden');
     
-    // Å¸ÀÌ¸Ó ÃÊ±âÈ­ ¹× ½ÃÀÛ
+    // íƒ€ì´ë¨¸ ì´ˆê¸°í™”
     resetTimer();
     startTimer();
     
-    // °ÔÀÓ º¸µå ÃÊ±âÈ­ ¹× ¼ıÀÚ »ı¼º
+    // ê²Œì„ ë³´ë“œ ì´ˆê¸°í™”
     clearGameBoard();
     generateNumbers();
     
-    // ÃÖÃÊ Å©±â ÀúÀå
+    // ê²Œì„ ë³´ë“œ í¬ê¸° ì´ˆê¸°í™”
     lastWindowWidth = window.innerWidth;
     lastWindowHeight = window.innerHeight;
 }
 
-// ê²Œì„ ?¼?‹œ? •ì§? ?•¨?ˆ˜
+// ê²Œì„ ì¼ì‹œì •ì§€ ì²˜ë¦¬
 function pauseGame() {
     if (!gameActive || gamePaused) return;
     
@@ -314,49 +314,49 @@ function pauseGame() {
     pauseStartTime = new Date();
     stopTimer();
     
-    // ë²„íŠ¼ ?ƒ?ƒœ ë³?ê²?
+    // ë²„íŠ¼ ë¹„í™œì„±í™”
     pauseButton.classList.add('hidden');
     resumeButton.classList.remove('hidden');
     
-    // ê²Œì„ ë³´ë“œ?— ?¼?‹œ? •ì§? ?˜¤ë²„ë ˆ?´ ì¶”ê??
+    // ê²Œì„ ë³´ë“œì—ì„œ ë³´ì´ì§€ ì•ŠëŠ” ìš”ì†Œë“¤ ì¶”ê°€
     const pauseOverlay = document.createElement('div');
     pauseOverlay.className = 'pause-overlay';
-    pauseOverlay.innerHTML = '<div class="pause-message">?¼?‹œ? •ì§??¨</div>';
+    pauseOverlay.innerHTML = '<div class="pause-message">ê²Œì„ì„ ì¼ì‹œì •ì§€í•˜ì‹œê² ìŠµë‹ˆê¹Œ?</div>';
     gameBoard.appendChild(pauseOverlay);
 }
 
-// ê²Œì„ ?¬ê°? ?•¨?ˆ˜
+// ê²Œì„ ì¬ì‹œì‘ ì²˜ë¦¬
 function resumeGame() {
     if (!gameActive || !gamePaused) return;
     
-    // ?¼?‹œ? •ì§??œ ?‹œê°? ê³„ì‚°
+    // ì¼ì‹œì •ì§€ ì‹œê°„ ê³„ì‚°
     const now = new Date();
     totalPausedTime += now - pauseStartTime;
     
     gamePaused = false;
     
-    // ë²„íŠ¼ ?ƒ?ƒœ ë³?ê²?
+    // ë²„íŠ¼ ë¹„í™œì„±í™”
     resumeButton.classList.add('hidden');
     pauseButton.classList.remove('hidden');
     
-    // ?¼?‹œ? •ì§? ?˜¤ë²„ë ˆ?´ ? œê±?
+    // ê²Œì„ ë³´ë“œì—ì„œ ë³´ì´ì§€ ì•ŠëŠ” ìš”ì†Œë“¤ ì œê±°
     const pauseOverlay = document.querySelector('.pause-overlay');
     if (pauseOverlay) {
         pauseOverlay.remove();
     }
     
-    // ????´ë¨? ?¬?‹œ?‘
+    // íƒ€ì´ë¨¸ ì¬ì‹œì‘
     startTimer();
 }
 
-// ê²Œì„ ?¬?„¤? • ?™•?¸ ?•¨?ˆ˜
+// ê²Œì„ ì¬ì‹œì‘ í™•ì¸
 function confirmResetGame() {
-    if (confirm('? •ë§ë¡œ ê²Œì„?„ ?¬ê¸°í•˜?‹œê² ìŠµ?‹ˆê¹??')) {
+    if (confirm('ë§ë¡œ ê²Œì„ì„ ì´ˆê¸°í™”í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')) {
         resetGame();
     }
 }
 
-// °ÔÀÓ Àç¼³Á¤ ÇÔ¼ö
+// ê²Œì„ ë³´ë“œ ì´ˆê¸°í™”
 function resetGame() {
     stopTimer();
     resultScreen.classList.add('hidden');
@@ -365,131 +365,131 @@ function resetGame() {
     currentTarget = 1;
     currentNumberElement.textContent = currentTarget;
     
-    // ½ºÅ©·Ñ ¹æÁö ÇØÁ¦
+    // ê²Œì„ í™œì„±í™” í´ë˜ìŠ¤ ì œê±°
     document.body.classList.remove('game-active');
     
-    // ¹öÆ° »óÅÂ º¯°æ
+    // ê²Œì„ ì»¨íŠ¸ë¡¤ ë²„íŠ¼ ì„¤ì •
+    startButton.classList.remove('hidden');
+    difficultyContainer.classList.remove('hidden');
     pauseButton.classList.add('hidden');
     resumeButton.classList.add('hidden');
     restartButton.classList.add('hidden');
-    startButton.classList.remove('hidden');
-    difficultyContainer.classList.remove('hidden');
     
-    // ·©Å· °ü·Ã ¿ä¼Ò ÃÊ±âÈ­
+    // ë­í‚¹ ì‹œìŠ¤í…œ ì ìˆ˜ ì´ˆê¸°í™”
     saveScoreButton.disabled = false;
-    saveScoreButton.textContent = '±â·Ï ÀúÀå';
+    saveScoreButton.textContent = 'ì ìˆ˜ ì €ì¥';
     rankingScreen.classList.add('hidden');
     
-    // °ÔÀÓ º¸µå ÃÊ±âÈ­
+    // ê²Œì„ ë³´ë“œ ì´ˆê¸°í™”
     clearGameBoard();
 }
 
-// ê²Œì„ ë³´ë“œ ì´ˆê¸°?™” ?•¨?ˆ˜
+// ê²Œì„ ë³´ë“œ ì´ˆê¸°í™”
 function clearGameBoard() {
     gameBoard.innerHTML = '';
     numberElements = [];
 }
 
-// ?ˆ«? ?ƒ?„± ë°? ê·¸ë¦¬?“œ ë°°ì¹˜ ?•¨?ˆ˜
+// ê²Œì„ ë³´ë“œì—ì„œ ìˆ«ì ê·¸ë¦¬ê¸° ë°°ì¹˜ ì²˜ë¦¬
 function generateNumbers() {
     const boardRect = gameBoard.getBoundingClientRect();
     const boardWidth = boardRect.width;
     const boardHeight = boardRect.height;
     
-    console.log("ê²Œì„ ë³´ë“œ ?¬ê¸?:", boardWidth, "x", boardHeight);
+    console.log("ê²Œì„ ë³´ë“œ í¬ê¸°:", boardWidth, "x", boardHeight);
     
-    // ê²Œì„ ë³´ë“œê°? ?„ˆë¬? ?‘?œ¼ë©? ì¡°ì •
+    // ê²Œì„ ë³´ë“œì—ì„œ ë³´ì´ì§€ ì•ŠëŠ” ìš”ì†Œë“¤ ì¡°ì •
     if (boardWidth < 100 || boardHeight < 100) {
         gameBoard.style.minHeight = "60vh";
         gameBoard.style.height = "60vh";
         gameBoard.getBoundingClientRect();
     }
     
-    // ê·¸ë¦¬?“œ ?¬ê¸? ê³„ì‚° (?‚œ?´?„ë³? ìµœì ?™”)
+    // ê·¸ë¦¬ê¸° ê³„ì‚° (ìµœì í™”ë¥¼ ìœ„í•œ ì¡°ì •)
     const numElements = maxNumber;
     let gridSize;
     
-    // ?‚œ?´?„ë³? ê·¸ë¦¬?“œ ?¬ê¸? ìµœì ?™”
-    if (numElements <= 20) { // ?‰¬???
-        gridSize = 5; // 5x5 ê·¸ë¦¬?“œ (20ê°? ?š”?†Œ?— ìµœì )
+    // ê·¸ë¦¬ê¸° ê³„ì‚° (ìµœì í™”ë¥¼ ìœ„í•œ ì¡°ì •)
+    if (numElements <= 20) { // ìµœì í™”ë¥¼ ìœ„í•œ ê·¸ë¦¬ê¸° ê³„ì‚°
+        gridSize = 5; // 5x5 ê·¸ë¦¬ê¸° (20ê°œ ì´ìƒì˜ ìˆ«ìë¥¼ ìœ„í•œ ìµœì í™”)
     } else if (numElements <= 30) { // ë³´í†µ
-        gridSize = 6; // 6x6 ê·¸ë¦¬?“œ (30ê°? ?š”?†Œ?— ìµœì )
-    } else { // ?–´? ¤???
-        gridSize = 7; // 7x7 ê·¸ë¦¬?“œ (40ê°? ?š”?†Œ?— ìµœì )
+        gridSize = 6; // 6x6 ê·¸ë¦¬ê¸° (30ê°œ ì´ìƒì˜ ìˆ«ìë¥¼ ìœ„í•œ ìµœì í™”)
+    } else { // ìµœì í™”ë¥¼ ìœ„í•œ ê·¸ë¦¬ê¸° ê³„ì‚°
+        gridSize = 7; // 7x7 ê·¸ë¦¬ê¸° (40ê°œ ì´ìƒì˜ ìˆ«ìë¥¼ ìœ„í•œ ìµœì í™”)
     }
     
-    console.log("ê·¸ë¦¬?“œ ?¬ê¸?:", gridSize, "x", gridSize);
+    console.log("ê·¸ë¦¬ê¸° í¬ê¸°:", gridSize, "x", gridSize);
     
-    // ëª¨ë°”?¼ ê¸°ê¸°?¸ì§? ?™•?¸
+    // ëª¨ë°”ì¼ ê¸°ê¸° í™•ì¸
     const isMobile = window.innerWidth <= 480;
     
-    // ?š”?†Œ ?¬ê¸? ê³„ì‚° (?—¬ë°? ?¬?•¨)
+    // ê·¸ë¦¬ê¸° ê³„ì‚° (ìµœì í™”ë¥¼ ìœ„í•œ ì¡°ì •)
     const cellSize = Math.min(
         Math.floor(boardWidth / gridSize) * 0.95,
         Math.floor(boardHeight / gridSize) * 0.95
     );
     
-    // ?š”?†Œ ?‹¤? œ ?¬ê¸? (ëª¨ë°”?¼?—?„œ?Š” ?” ?‘ê²?)
+    // ê·¸ë¦¬ê¸° ê³„ì‚° (ì¤‘ì•™ ì¡°ì •)
     const elementSize = isMobile ? 
         Math.floor(cellSize * 0.75) : 
         Math.floor(cellSize * 0.85);
     const margin = Math.floor((cellSize - elementSize) / 2);
     
-    // ê·¸ë¦¬?“œ ?‹œ?‘ ?œ„ì¹? ê³„ì‚° (ì¤‘ì•™ ? •? ¬)
+    // ê·¸ë¦¬ê¸° ê³„ì‚° (ì¤‘ì•™ ì¡°ì •)
     const startX = Math.floor((boardWidth - cellSize * gridSize) / 2) + margin;
     const startY = Math.floor((boardHeight - cellSize * gridSize) / 2) + margin;
     
-    console.log("??? ?¬ê¸?:", cellSize, "?š”?†Œ ?¬ê¸?:", elementSize, "?—¬ë°?:", margin);
+    console.log("ê·¸ë¦¬ê¸° í¬ê¸°:", cellSize, "x", elementSize, "x", margin);
     
-    // ?ˆ«? ?°?´?„° ë²”ìœ„ ì¶”ì¶œ ë°? ?…”?”Œ
+    // ê·¸ë¦¬ê¸° ë²”ìœ„ ì¶”ì¶œ ë° ì¡°ì •
     const shuffledNumbers = shuffleArray(numbersData.slice(0, maxNumber));
     
-    // ê·¸ë¦¬?“œ?— ?š”?†Œ ë°°ì¹˜
+    // ê·¸ë¦¬ê¸° ë°°ì¹˜
     shuffledNumbers.forEach((numberData, index) => {
-        // ?–‰ê³? ?—´ ?œ„ì¹? ê³„ì‚°
+        // ê·¸ë¦¬ê¸° ê³„ì‚°
         const row = Math.floor(index / gridSize);
         const col = index % gridSize;
         
-        // ?œ?¤?•˜ê²? ?ˆ«? ?‘œ?˜„ ?˜•?‹ ?„ ?ƒ (?•„?¼ë¹„ì•„, ?˜?–´, ?•œêµ??–´)
+        // ê·¸ë¦¬ê¸° í˜•ì‹ ì¶”ì¶œ
         const formatIndex = Math.floor(Math.random() * 3);
         const format = numberData.formats[formatIndex];
         
-        // ?ˆ«? ?š”?†Œ ?ƒ?„±
+        // ê·¸ë¦¬ê¸° ìš”ì†Œ ìƒì„±
         const element = document.createElement('div');
         element.className = 'number-item';
         element.dataset.value = numberData.value;
         element.textContent = format;
         
-        // ?˜•?‹?— ?”°ë¥? ?Š¤????¼ ?´?˜?Š¤ ì¶”ê??
+        // ê·¸ë¦¬ê¸° í˜•ì‹ì— ë”°ë¥¸ í´ë˜ìŠ¤ ì¶”ê°€
         if (formatIndex === 0) element.classList.add('number-arabic');
         else if (formatIndex === 1) element.classList.add('number-english');
         else element.classList.add('number-korean');
         
-        // ?ˆ«? ?¬ê¸°ì— ?”°ë¥? ?Š¤????¼ ?´?˜?Š¤ ì¶”ê??
+        // ê·¸ë¦¬ê¸° ìš”ì†Œì— ë”°ë¥¸ í´ë˜ìŠ¤ ì¶”ê°€
         if (numberData.value <= 9) element.classList.add('small-number');
         else if (numberData.value <= 19) element.classList.add('medium-number');
         else element.classList.add('large-number');
         
-        // ëª¨ë°”?¼ ?™”ë©´ì—?„œ?Š” ?°?Š¸ ?¬ê¸? ì¡°ì •
+        // ëª¨ë°”ì¼ì— ë”°ë¥¸ ì¡°ì •
         if (isMobile) {
             element.classList.add('mobile-item');
         }
         
-        // ?š”?†Œ ?¬ê¸? ë°? ?œ„ì¹? ?„¤? •
+        // ê·¸ë¦¬ê¸° ê³„ì‚° (ì¤‘ì•™ ì¡°ì •)
         element.style.width = `${elementSize}px`;
         element.style.height = `${elementSize}px`;
         element.style.left = `${startX + col * cellSize}px`;
         element.style.top = `${startY + row * cellSize}px`;
         
-        // ê²Œì„ ë³´ë“œ?— ?š”?†Œ ì¶”ê??
+        // ê²Œì„ ë³´ë“œì— ì¶”ê°€
         gameBoard.appendChild(element);
         numberElements.push(element);
         
-        console.log(`?ˆ«? ${numberData.value} (${format}) ?ƒ?„±: ?œ„ì¹? (${row}, ${col})`);
+        console.log(`ê·¸ë¦¬ê¸° ${numberData.value} (${format}) ìœ„ì¹˜: ${startX + col * cellSize}, ${startY + row * cellSize}`);
     });
 }
 
-// ë°°ì—´?„ ë¬´ì‘?œ„ë¡? ?„?Š” ?•¨?ˆ˜
+// ë°°ì—´ ë¬´ì‘ìœ„ ì²˜ë¦¬
 function shuffleArray(array) {
     const newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -499,37 +499,37 @@ function shuffleArray(array) {
     return newArray;
 }
 
-// ?ˆ«? ?´ë¦? ì²˜ë¦¬ ?•¨?ˆ˜
+// ê²Œì„ ë³´ë“œì—ì„œ ìˆ«ì ì²˜ë¦¬
 function handleNumberClick(event) {
     if (!gameActive || gamePaused) return;
     
     const element = event.target;
     
-    // ?ˆ«? ?š”?†Œ?¸ì§? ?™•?¸
+    // ê·¸ë¦¬ê¸° í™•ì¸
     if (element.classList.contains('number-item')) {
         const value = parseInt(element.dataset.value);
         
-        // ?˜„?¬ ëª©í‘œ ?ˆ«???? ?¼ì¹˜í•˜?Š”ì§? ?™•?¸
+        // ëª©í‘œ ìˆ«ìì™€ ë¹„êµí•˜ì—¬ ì²˜ë¦¬
         if (value === currentTarget) {
-            // ?‹œê°ì  ?”¼?“œë°?
+            // ì •ë‹µ ì²˜ë¦¬
             element.classList.add('correct');
             playCorrectSound();
             
-            // ?‹¤?Œ ëª©í‘œ ?ˆ«?ë¡? ?—…?°?´?Š¸
+            // ëª©í‘œ ìˆ«ì ë‹¤ìŒìœ¼ë¡œ ì´ë™
             currentTarget++;
             currentNumberElement.textContent = currentTarget;
             
-            // ëª¨ë“  ?ˆ«?ë¥? ì°¾ì•˜?Š”ì§? ?™•?¸
+            // ëª¨ë“  ìˆ«ì ì°¾ì•˜ëŠ”ì§€ í™•ì¸
             if (currentTarget > maxNumber) {
                 gameComplete();
             }
         } else {
-            // ???ë¦? ê²½ìš° ?‹œê°ì  ?”¼?“œë°?
+            // ì˜¤ë‹µ ê²½ìš° ì •ë‹µ ì²˜ë¦¬
             mistakes++;
             element.classList.add('wrong');
             playWrongSound();
             
-            // ? ?‹œ ?›„ ?‹œê°ì  ?”¼?“œë°? ? œê±?
+            // ì •ë‹µ ì²˜ë¦¬ í›„ ì˜¤ë‹µ ì œê±°
             setTimeout(() => {
                 element.classList.remove('wrong');
             }, 300);
@@ -537,9 +537,9 @@ function handleNumberClick(event) {
     }
 }
 
-// ?š¨ê³¼ìŒ ?¬?ƒ ?•¨?ˆ˜
+// ì •ë‹µìŒ ì²˜ë¦¬
 function playCorrectSound() {
-    // ê°„ë‹¨?•œ ?š¨ê³¼ìŒ ?¬?ƒ (?›¹ ?˜¤?””?˜¤ API ?‚¬?š©)
+    // ê°„ë‹¨í•œ ì •ë‹µìŒ ì²˜ë¦¬ (ê°„ë‹¨í•œ ì˜¤ë””ì˜¤ API ì‚¬ìš©)
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const oscillator = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
@@ -556,7 +556,7 @@ function playCorrectSound() {
 }
 
 function playWrongSound() {
-    // ê°„ë‹¨?•œ ?š¨ê³¼ìŒ ?¬?ƒ (?›¹ ?˜¤?””?˜¤ API ?‚¬?š©)
+    // ê°„ë‹¨í•œ ì˜¤ë‹µìŒ ì²˜ë¦¬ (ê°„ë‹¨í•œ ì˜¤ë””ì˜¤ API ì‚¬ìš©)
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const oscillator = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
@@ -572,35 +572,35 @@ function playWrongSound() {
     oscillator.stop(audioContext.currentTime + 0.15);
 }
 
-// ê²Œì„ ?™„ë£? ?•¨?ˆ˜
+// ê²Œì„ ì¢…ë£Œ ì²˜ë¦¬
 function gameComplete() {
     gameActive = false;
     stopTimer();
     
-    // ½ºÅ©·Ñ ¹æÁö ÇØÁ¦
+    // ê²Œì„ í™œì„±í™” í´ë˜ìŠ¤ ì œê±°
     document.body.classList.remove('game-active');
     
-    // °á°ú È­¸é Ç¥½Ã
+    // ì¢…ë£Œ ì‹œê°„ í‘œì‹œ
     finalTimeElement.textContent = timerElement.textContent;
     
-    // Æ²¸° È½¼ö Ç¥½Ã ¿ä¼Ò Ãß°¡
+    // ì‹¤ìˆ˜ íšŸìˆ˜ í‘œì‹œ
     const mistakesElement = document.getElementById('mistakes-count');
     if (mistakesElement) {
         mistakesElement.textContent = mistakes;
     }
     
-    // ÀÌÀü¿¡ ÀúÀåµÈ ÀÌ¸§ÀÌ ÀÖÀ¸¸é Ç¥½Ã
+    // ì €ì¥ëœ ì´ë¦„ í‘œì‹œ
     const savedName = localStorage.getItem('playerName');
     if (savedName) {
         playerNameInput.value = savedName;
     }
     
-    // °á°ú È­¸é Ç¥½Ã - ¸ğµç hidden ¼Ó¼º Á¦°Å
+    // ì¢…ë£Œ ì‹œê°„ í‘œì‹œ - ìˆ¨ê²¨ì§„ ìš”ì†Œ ì¶”ê°€
     resultScreen.classList.remove('hidden');
     resultScreen.style.display = 'flex';
 }
 
-// ????´ë¨? ê´?? ¨ ?•¨?ˆ˜?“¤
+// íƒ€ì´ë¨¸ ì²˜ë¦¬
 function startTimer() {
     if (!startTime) {
         startTime = new Date();
@@ -630,54 +630,54 @@ function updateTimer() {
     timerElement.textContent = `${minutes}:${seconds}:${milliseconds}`;
 }
 
-// È­¸é Å©±â º¯°æ ½Ã ¿ä¼Ò Àç¹èÄ¡
+// í¬ê¸° ë³€í™” ì²˜ë¦¬ (ê²Œì„ í™œì„±í™” ì‹œ í¬ê¸° ë³€í™” ë¬´ì‹œ ì²˜ë¦¬)
 window.addEventListener('resize', () => {
-    // °ÔÀÓÀÌ È°¼ºÈ­µÇ¾î ÀÖÀ» ¶§¸¸ Ã³¸®
+    // ê²Œì„ í™œì„±í™” ì‹œ í¬ê¸° ë³€í™” ì„ê³„ê°’ ì²˜ë¦¬
     if (gameActive) {
-        // Å©±â º¯È­°¡ ÀÓ°è°ª ÀÌ»óÀÏ ¶§¸¸ Àç¹èÄ¡
+        // í¬ê¸° ë³€í™” ì„ê³„ê°’ ì²˜ë¦¬
         const widthChange = Math.abs(window.innerWidth - lastWindowWidth);
         const heightChange = Math.abs(window.innerHeight - lastWindowHeight);
         
         if (widthChange > RESIZE_THRESHOLD || heightChange > RESIZE_THRESHOLD) {
-            // ÇöÀç Å©±â ÀúÀå
+            // ê²Œì„ ë³´ë“œ í¬ê¸° ì´ˆê¸°í™”
             lastWindowWidth = window.innerWidth;
             lastWindowHeight = window.innerHeight;
             
-            // °ÔÀÓ º¸µå Àç»ı¼º
+            // ê²Œì„ ë³´ë“œ ì´ˆê¸°í™”
             clearGameBoard();
             generateNumbers();
         }
     } else {
-        // °ÔÀÓÀÌ È°¼ºÈ­µÇÁö ¾ÊÀº °æ¿ì ÇöÀç Å©±â ÀúÀå
+        // ê²Œì„ í™œì„±í™” ì‹œ í¬ê¸° ë³€í™” ì—†ì„ ì‹œ í¬ê¸° ì´ˆê¸°í™”
         lastWindowWidth = window.innerWidth;
         lastWindowHeight = window.innerHeight;
     }
 });
 
-// ÅÍÄ¡ ÀÌº¥Æ® Ã³¸® (¸ğ¹ÙÀÏ¿¡¼­ ½ºÅ©·Ñ ¹æÁö)
+// í„°ì¹˜ ì´ë²¤íŠ¸ ì²˜ë¦¬ (ê²Œì„ í™œì„±í™” ì‹œ í„°ì¹˜ ë¬´ì‹œ ì²˜ë¦¬)
 gameBoard.addEventListener('touchmove', function(e) {
     if (gameActive) {
         e.preventDefault();
     }
 }, { passive: false });
 
-// ===== ·©Å· ½Ã½ºÅÛ ±â´É =====
+// ===== ë­í‚¹ ì‹œìŠ¤í…œ ì²˜ë¦¬ =====
 
-// Á¡¼ö ÀúÀå ÇÔ¼ö
+// ì ìˆ˜ ì €ì¥ í•¨ìˆ˜
 function saveScore() {
     const playerName = playerNameInput.value.trim();
     if (!playerName) {
-        alert('ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä!');
+        alert('ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”!');
         return;
     }
     
-    // ÇÃ·¹ÀÌ¾î ÀÌ¸§ ÀúÀå
+    // ì €ì¥ëœ ì´ë¦„ ì €ì¥
     localStorage.setItem('playerName', playerName);
     
-    // ³­ÀÌµµº° ·©Å· Å°
+    // ë‚œì´ë„ì— ë”°ë¥¸ ì ìˆ˜ ì €ì¥
     const difficultyKey = getDifficultyKey();
     
-    // »õ·Î¿î Á¡¼ö µ¥ÀÌÅÍ
+    // ìƒˆë¡œìš´ ì ìˆ˜ ìƒì„±
     const newScore = {
         name: playerName,
         time: timerElement.textContent,
@@ -687,74 +687,74 @@ function saveScore() {
         difficulty: maxNumber
     };
     
-    // ±âÁ¸ ·©Å· µ¥ÀÌÅÍ °¡Á®¿À±â
+    // ë‚œì´ë„ì— ë”°ë¥¸ ì ìˆ˜ ì €ì¥
     let rankings = JSON.parse(localStorage.getItem(difficultyKey)) || [];
     
-    // »õ Á¡¼ö Ãß°¡
+    // ìƒˆë¡œìš´ ì ìˆ˜ ì¶”ê°€
     rankings.push(newScore);
     
-    // ½Ã°£ ±âÁØÀ¸·Î Á¤·Ä (¿À¸§Â÷¼ø)
+    // ì ìˆ˜ ì •ë ¬
     rankings.sort((a, b) => a.timeValue - b.timeValue);
     
-    // »óÀ§ 10°³¸¸ À¯Áö
+    // ìƒìœ„ 10ê°œ ì ìˆ˜ ì„ íƒ
     rankings = rankings.slice(0, 10);
     
-    // ÀúÀå
+    // ì ìˆ˜ ì €ì¥
     localStorage.setItem(difficultyKey, JSON.stringify(rankings));
     
-    // ÀúÀå ¹öÆ° ºñÈ°¼ºÈ­ ¹× ¸Ş½ÃÁö Ç¥½Ã
+    // ë­í‚¹ í™”ë©´ ì´ˆê¸°í™”
     saveScoreButton.disabled = true;
-    saveScoreButton.textContent = 'ÀúÀåµÊ!';
+    saveScoreButton.textContent = 'ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤!';
     
-    // ·©Å· Ç¥½Ã ¾÷µ¥ÀÌÆ® (ÀÌ¹Ì ·©Å· È­¸éÀÌ Ç¥½ÃµÇ¾î ÀÖÀ» °æ¿ì)
+    // ë­í‚¹ ì‹œìŠ¤í…œ ì´ë²¤íŠ¸ ì²˜ë¦¬ (ë­í‚¹ í™”ë©´ì—ì„œ ì ìˆ˜ í‘œì‹œ)
     if (!rankingScreen.classList.contains('hidden')) {
         updateRankingDisplay();
     }
 }
 
-// ·©Å· È­¸é Ç¥½Ã ÇÔ¼ö
+// ë­í‚¹ í™”ë©´ ì²˜ë¦¬ í•¨ìˆ˜
 function showRanking() {
-    // ÇöÀç ³­ÀÌµµ¿¡ ¸Â´Â ¿É¼Ç ¼±ÅÃ
+    // ë­í‚¹ ì‹œìŠ¤í…œ ì ìˆ˜ í‘œì‹œ
     const difficultyKey = getDifficultyKey();
     rankingDifficultySelect.value = difficultyKey.split('_')[1];
     
-    // ·©Å· Å×ÀÌºí ¾÷µ¥ÀÌÆ®
+    // ë­í‚¹ ì‹œìŠ¤í…œ ì´ë²¤íŠ¸ ì²˜ë¦¬
     updateRankingDisplay();
     
-    // ·©Å· È­¸é Ç¥½Ã
+    // ë­í‚¹ í™”ë©´ ë³´ì´ê¸°
     rankingScreen.classList.remove('hidden');
 }
 
-// ·©Å· È­¸é ¼û±â±â ÇÔ¼ö
+// ë­í‚¹ í™”ë©´ì—ì„œ ë³´ì´ì§€ ì•Šê¸°
 function hideRanking() {
     rankingScreen.classList.add('hidden');
 }
 
-// ·©Å· Ç¥½Ã ¾÷µ¥ÀÌÆ® ÇÔ¼ö
+// ë­í‚¹ ì‹œìŠ¤í…œ ì´ë²¤íŠ¸ ì²˜ë¦¬
 function updateRankingDisplay() {
-    // ÇöÀç ¼±ÅÃµÈ ³­ÀÌµµ¿¡ µû¸¥ Å° °¡Á®¿À±â
+    // ë­í‚¹ ì‹œìŠ¤í…œ ì ìˆ˜ í‘œì‹œ
     const difficultyValue = rankingDifficultySelect.value;
     const difficultyKey = `rankings_${difficultyValue}`;
     
-    // ·©Å· µ¥ÀÌÅÍ °¡Á®¿À±â
+    // ë‚œì´ë„ì— ë”°ë¥¸ ì ìˆ˜ ì €ì¥
     const rankings = JSON.parse(localStorage.getItem(difficultyKey)) || [];
     
-    // Å×ÀÌºí ÃÊ±âÈ­
+    // ë­í‚¹ í…Œì´ë¸” ì´ˆê¸°í™”
     rankingTableBody.innerHTML = '';
     
-    // µ¥ÀÌÅÍ°¡ ¾øÀ» °æ¿ì
+    // ì ìˆ˜ ì—†ì„ ì‹œ ì²˜ë¦¬
     if (rankings.length === 0) {
         const row = document.createElement('tr');
-        row.innerHTML = '<td colspan="5">±â·ÏÀÌ ¾ø½À´Ï´Ù.</td>';
+        row.innerHTML = '<td colspan="5">ì ìˆ˜ê°€ ì—†ìŠµë‹ˆë‹¤.</td>';
         rankingTableBody.appendChild(row);
         return;
     }
     
-    // ·©Å· µ¥ÀÌÅÍ Ç¥½Ã
+    // ë­í‚¹ ì‹œìŠ¤í…œ ì ìˆ˜ í‘œì‹œ
     rankings.forEach((score, index) => {
         const row = document.createElement('tr');
         
-        // ÇöÀç ÇÃ·¹ÀÌ¾î °­Á¶
+        // í˜„ì¬ í”Œë ˆì´ì–´ í™•ì¸
         const isCurrentPlayer = score.name === playerNameInput.value && 
                               score.time === finalTimeElement.textContent;
         if (isCurrentPlayer) {
@@ -773,7 +773,7 @@ function updateRankingDisplay() {
     });
 }
 
-// ³­ÀÌµµ¿¡ µû¸¥ ·©Å· Å° ¹İÈ¯ ÇÔ¼ö
+// ë‚œì´ë„ì— ë”°ë¥¸ ì ìˆ˜ ì €ì¥ í‚¤ ë°˜í™˜ í•¨ìˆ˜
 function getDifficultyKey() {
     let difficultyKey;
     
@@ -788,7 +788,7 @@ function getDifficultyKey() {
     return difficultyKey;
 }
 
-// ½Ã°£ ¹®ÀÚ¿­À» ¹Ğ¸®ÃÊ·Î º¯È¯ÇÏ´Â ÇÔ¼ö
+// ì‹œê°„ ë¬¸ìì—´ì—ì„œ ë°€ë¦¬ì´ˆ ê°’ ë°˜í™˜ í•¨ìˆ˜
 function getTimeValueInMilliseconds(timeString) {
     const [minutes, seconds, milliseconds] = timeString.split(':').map(Number);
     return (minutes * 60 * 1000) + (seconds * 1000) + (milliseconds * 10);

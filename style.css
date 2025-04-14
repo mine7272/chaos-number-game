@@ -364,6 +364,8 @@ button:hover {
     padding: 20px;
     overflow-y: auto;
     padding-top: 50px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .intro-screen h2 {
@@ -380,6 +382,12 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 25px;
+    margin-bottom: 20px;
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .game-instructions p {
@@ -551,4 +559,11 @@ button:hover {
         padding: 8px 5px;
         font-size: 0.85rem;
     }
+}
+
+.version-info {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #888;
+    text-align: center;
 } 
