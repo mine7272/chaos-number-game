@@ -1,48 +1,48 @@
-// 1ë¶€í„° 40ê¹Œì§€ì˜ ìˆ«ìì— ëŒ€í•œ ë°ì´í„° êµ¬ì¡°
+// 1ë¶??„° 40ê¹Œì???˜ ?ˆ«??— ????•œ ?°?´?„° êµ¬ì"
 const numbersData = [
-    { value: 1, formats: ['1', 'one', 'ì¼'] },
-    { value: 2, formats: ['2', 'two', 'ì´'] },
-    { value: 3, formats: ['3', 'three', 'ì‚¼'] },
-    { value: 4, formats: ['4', 'four', 'ì‚¬'] },
-    { value: 5, formats: ['5', 'five', 'ì˜¤'] },
-    { value: 6, formats: ['6', 'six', 'ìœ¡'] },
-    { value: 7, formats: ['7', 'seven', 'ì¹ '] },
-    { value: 8, formats: ['8', 'eight', 'íŒ”'] },
-    { value: 9, formats: ['9', 'nine', 'êµ¬'] },
-    { value: 10, formats: ['10', 'ten', 'ì‹­'] },
-    { value: 11, formats: ['11', 'eleven', 'ì‹­ì¼'] },
-    { value: 12, formats: ['12', 'twelve', 'ì‹­ì´'] },
-    { value: 13, formats: ['13', 'thirteen', 'ì‹­ì‚¼'] },
-    { value: 14, formats: ['14', 'fourteen', 'ì‹­ì‚¬'] },
-    { value: 15, formats: ['15', 'fifteen', 'ì‹­ì˜¤'] },
-    { value: 16, formats: ['16', 'sixteen', 'ì‹­ìœ¡'] },
-    { value: 17, formats: ['17', 'seventeen', 'ì‹­ì¹ '] },
-    { value: 18, formats: ['18', 'eighteen', 'ì‹­íŒ”'] },
-    { value: 19, formats: ['19', 'nineteen', 'ì‹­êµ¬'] },
-    { value: 20, formats: ['20', 'twenty', 'ì´ì‹­'] },
-    { value: 21, formats: ['21', 'twenty-one', 'ì´ì‹­ì¼'] },
-    { value: 22, formats: ['22', 'twenty-two', 'ì´ì‹­ì´'] },
-    { value: 23, formats: ['23', 'twenty-three', 'ì´ì‹­ì‚¼'] },
-    { value: 24, formats: ['24', 'twenty-four', 'ì´ì‹­ì‚¬'] },
-    { value: 25, formats: ['25', 'twenty-five', 'ì´ì‹­ì˜¤'] },
-    { value: 26, formats: ['26', 'twenty-six', 'ì´ì‹­ìœ¡'] },
-    { value: 27, formats: ['27', 'twenty-seven', 'ì´ì‹­ì¹ '] },
-    { value: 28, formats: ['28', 'twenty-eight', 'ì´ì‹­íŒ”'] },
-    { value: 29, formats: ['29', 'twenty-nine', 'ì´ì‹­êµ¬'] },
-    { value: 30, formats: ['30', 'thirty', 'ì‚¼ì‹­'] },
-    { value: 31, formats: ['31', 'thirty-one', 'ì‚¼ì‹­ì¼'] },
-    { value: 32, formats: ['32', 'thirty-two', 'ì‚¼ì‹­ì´'] },
-    { value: 33, formats: ['33', 'thirty-three', 'ì‚¼ì‹­ì‚¼'] },
-    { value: 34, formats: ['34', 'thirty-four', 'ì‚¼ì‹­ì‚¬'] },
-    { value: 35, formats: ['35', 'thirty-five', 'ì‚¼ì‹­ì˜¤'] },
-    { value: 36, formats: ['36', 'thirty-six', 'ì‚¼ì‹­ìœ¡'] },
-    { value: 37, formats: ['37', 'thirty-seven', 'ì‚¼ì‹­ì¹ '] },
-    { value: 38, formats: ['38', 'thirty-eight', 'ì‚¼ì‹­íŒ”'] },
-    { value: 39, formats: ['39', 'thirty-nine', 'ì‚¼ì‹­êµ¬'] },
-    { value: 40, formats: ['40', 'forty', 'ì‚¬ì‹­'] }
+    { value: 1, formats: ['1', 'one', '?¼'] },
+    { value: 2, formats: ['2', 'two', '?´'] },
+    { value: 3, formats: ['3', 'three', '?‚¼'] },
+    { value: 4, formats: ['4', 'four', '?‚¬'] },
+    { value: 5, formats: ['5', 'five', '?˜¤'] },
+    { value: 6, formats: ['6', 'six', '?œ¡'] },
+    { value: 7, formats: ['7', 'seven', 'ì¹?'] },
+    { value: 8, formats: ['8', 'eight', '?Œ”'] },
+    { value: 9, formats: ['9', 'nine', 'êµ?'] },
+    { value: 10, formats: ['10', 'ten', '?‹­'] },
+    { value: 11, formats: ['11', 'eleven', '?‹­?¼'] },
+    { value: 12, formats: ['12', 'twelve', '?‹­?´'] },
+    { value: 13, formats: ['13', 'thirteen', '?‹­?‚¼'] },
+    { value: 14, formats: ['14', 'fourteen', '?‹­?‚¬'] },
+    { value: 15, formats: ['15', 'fifteen', '?‹­?˜¤'] },
+    { value: 16, formats: ['16', 'sixteen', '?‹­?œ¡'] },
+    { value: 17, formats: ['17', 'seventeen', '?‹­ì¹?'] },
+    { value: 18, formats: ['18', 'eighteen', '?‹­?Œ”'] },
+    { value: 19, formats: ['19', 'nineteen', '?‹­êµ?'] },
+    { value: 20, formats: ['20', 'twenty', '?´?‹­'] },
+    { value: 21, formats: ['21', 'twenty-one', '?´?‹­?¼'] },
+    { value: 22, formats: ['22', 'twenty-two', '?´?‹­?´'] },
+    { value: 23, formats: ['23', 'twenty-three', '?´?‹­?‚¼'] },
+    { value: 24, formats: ['24', 'twenty-four', '?´?‹­?‚¬'] },
+    { value: 25, formats: ['25', 'twenty-five', '?´?‹­?˜¤'] },
+    { value: 26, formats: ['26', 'twenty-six', '?´?‹­?œ¡'] },
+    { value: 27, formats: ['27', 'twenty-seven', '?´?‹­ì¹?'] },
+    { value: 28, formats: ['28', 'twenty-eight', '?´?‹­?Œ”'] },
+    { value: 29, formats: ['29', 'twenty-nine', '?´?‹­êµ?'] },
+    { value: 30, formats: ['30', 'thirty', '?‚¼?‹­'] },
+    { value: 31, formats: ['31', 'thirty-one', '?‚¼?‹­?¼'] },
+    { value: 32, formats: ['32', 'thirty-two', '?‚¼?‹­?´'] },
+    { value: 33, formats: ['33', 'thirty-three', '?‚¼?‹­?‚¼'] },
+    { value: 34, formats: ['34', 'thirty-four', '?‚¼?‹­?‚¬'] },
+    { value: 35, formats: ['35', 'thirty-five', '?‚¼?‹­?˜¤'] },
+    { value: 36, formats: ['36', 'thirty-six', '?‚¼?‹­?œ¡'] },
+    { value: 37, formats: ['37', 'thirty-seven', '?‚¼?‹­ì¹?'] },
+    { value: 38, formats: ['38', 'thirty-eight', '?‚¼?‹­?Œ”'] },
+    { value: 39, formats: ['39', 'thirty-nine', '?‚¼?‹­êµ?'] },
+    { value: 40, formats: ['40', 'forty', '?‚¬?‹­'] }
 ];
 
-// ê²Œì„ ìƒíƒœ ë³€ìˆ˜
+// ê²Œì„ ?ƒ?ƒœ ë³??ˆ˜
 let gameActive = false;
 let gamePaused = false;
 let currentTarget = 1;
@@ -52,10 +52,10 @@ let totalPausedTime = 0;
 let timerInterval;
 let gameBoard;
 let numberElements = [];
-let mistakes = 0; // í‹€ë¦° íšŸìˆ˜ ì¶”ì 
-let maxNumber = 30; // ê¸°ë³¸ ë‚œì´ë„ (ë³´í†µ)
+let mistakes = 0; // ???ë¦? ?šŸ?ˆ˜ ì¶”ì 
+let maxNumber = 30; // ê¸°ë³¸ ?‚œ?´?„ (ë³´í†µ)
 
-// DOM ìš”ì†Œë“¤
+// DOM ?š”?†Œ?“¤
 const startButton = document.getElementById('start-button');
 const pauseButton = document.getElementById('pause-button');
 const resumeButton = document.getElementById('resume-button');
@@ -70,63 +70,78 @@ const normalButton = document.getElementById('normal-button');
 const hardButton = document.getElementById('hard-button');
 const difficultyContainer = document.getElementById('difficulty-container');
 
-// ì¸íŠ¸ë¡œ í™”ë©´ ìš”ì†Œë“¤
+// ·©Å· ½Ã½ºÅÛ ¿ä¼Òµé
+const playerNameInput = document.getElementById('player-name');
+const saveScoreButton = document.getElementById('save-score-button');
+const showRankingButton = document.getElementById('show-ranking-button');
+const rankingScreen = document.getElementById('ranking-screen');
+const rankingTableBody = document.getElementById('ranking-table-body');
+const closeRankingButton = document.getElementById('close-ranking-button');
+const rankingDifficultySelect = document.getElementById('ranking-difficulty');
+
+// ¸Š¸ë¡ ™”ë©? ?š”?†Œ?“¤
 const introScreen = document.getElementById('intro-screen');
 const startGameButton = document.getElementById('start-game-button');
 const easyButtonIntro = document.getElementById('easy-button-intro');
 const normalButtonIntro = document.getElementById('normal-button-intro');
 const hardButtonIntro = document.getElementById('hard-button-intro');
 
-// ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆ ì„¤ì •
+// ?´ë²¤íŠ¸ ë¦¬ìŠ¤?„ˆ ?„¤? •
 document.addEventListener('DOMContentLoaded', () => {
     gameBoard = document.getElementById('game-board');
     
-    // ì´ˆê¸°í™” í•¨ìˆ˜ í˜¸ì¶œ
+    // ì´ˆê¸°?™” ?•¨?ˆ˜ ?˜¸ì¶?
     initGame();
     
-    // ì¸íŠ¸ë¡œ í™”ë©´ ì´ë²¤íŠ¸ ì„¤ì •
+    // ?¸?Š¸ë¡? ?™”ë©? ?´ë²¤íŠ¸ ?„¤? •
     startGameButton.addEventListener('click', startFromIntro);
     easyButtonIntro.addEventListener('click', () => setDifficultyIntro('easy'));
     normalButtonIntro.addEventListener('click', () => setDifficultyIntro('normal'));
     hardButtonIntro.addEventListener('click', () => setDifficultyIntro('hard'));
     
-    // ê²Œì„ í”Œë ˆì´ ì¤‘ ì´ë²¤íŠ¸ ì„¤ì •
+    // ê²Œì„ ?”Œ? ˆ?´ ì¤? ?´ë²¤íŠ¸ ?„¤? •
     startButton.addEventListener('click', startGame);
     pauseButton.addEventListener('click', pauseGame);
     resumeButton.addEventListener('click', resumeGame);
     restartButton.addEventListener('click', confirmResetGame);
     playAgainButton.addEventListener('click', resetGame);
     
-    // ë‚œì´ë„ ë²„íŠ¼ ì´ë²¤íŠ¸ ì„¤ì • (ê²Œì„ í”Œë ˆì´ ì¤‘)
+    // ?‚œ?´?„ ë²„íŠ¼ ?´ë²¤íŠ¸ ?„¤? • (ê²Œì„ ?”Œ? ˆ?´ ì¤?)
     easyButton.addEventListener('click', () => setDifficulty('easy'));
     normalButton.addEventListener('click', () => setDifficulty('normal'));
     hardButton.addEventListener('click', () => setDifficulty('hard'));
     
-    // ê²Œì„ ë³´ë“œì— ì´ë²¤íŠ¸ ìœ„ì„ ì„¤ì •
+    // ·©Å· ½Ã½ºÅÛ ÀÌº¥Æ® ¼³Á¤
+    saveScoreButton.addEventListener('click', saveScore);
+    showRankingButton.addEventListener('click', showRanking);
+    closeRankingButton.addEventListener('click', hideRanking);
+    rankingDifficultySelect.addEventListener('change', updateRankingDisplay);
+    
+    // ê²Œì„ ë³´ë“œ— ?´ë²¤íŠ¸ ?œ„?„ ?„¤? •
     gameBoard.addEventListener('click', handleNumberClick);
 });
 
-// ê²Œì„ ì´ˆê¸°í™” í•¨ìˆ˜
+// ê²Œì„ ì´ˆê¸°?™” ?•¨?ˆ˜
 function initGame() {
-    // ê²Œì„ ê¸°ë³¸ ì„¤ì • - ê´€ë ¨ UI ìˆ¨ê¸°ê¸°
+    // ê²Œì„ ê¸°ë³¸ ?„¤? • - ê´?? ¨ UI ?ˆ¨ê¸°ê¸°
     hideGameElements();
     showIntroScreen();
     
-    // ê²°ê³¼ í™”ë©´ ê°•ì œë¡œ ìˆ¨ê¸°ê¸°
+    // ê²°ê³¼ ?™”ë©? ê°•ì œë¡? ?ˆ¨ê¸°ê¸°
     resultScreen.classList.add('hidden');
     resultScreen.style.display = 'none';
     
-    // ê²Œì„ ìƒíƒœ ì´ˆê¸°í™”
+    // ê²Œì„ ?ƒ?ƒœ ì´ˆê¸°?™”
     gameActive = false;
     gamePaused = false;
     currentTarget = 1;
     mistakes = 0;
     
-    // íƒ€ì´ë¨¸ ì´ˆê¸°í™”
+    // ????´ë¨? ì´ˆê¸°?™”
     resetTimer();
 }
 
-// ê²Œì„ ìš”ì†Œ ìˆ¨ê¸°ê¸° í•¨ìˆ˜
+// ê²Œì„ ?š”?†Œ ?ˆ¨ê¸°ê¸° ?•¨?ˆ˜
 function hideGameElements() {
     gameBoard.style.visibility = 'hidden';
     document.querySelector('.game-header').style.visibility = 'hidden';
@@ -137,7 +152,7 @@ function hideGameElements() {
     difficultyContainer.style.display = 'none';
 }
 
-// ê²Œì„ ìš”ì†Œ í‘œì‹œ í•¨ìˆ˜
+// ê²Œì„ ?š”?†Œ ?‘œ?‹œ ?•¨?ˆ˜
 function showGameElements() {
     gameBoard.style.visibility = 'visible';
     gameBoard.classList.remove('hidden');
@@ -147,24 +162,24 @@ function showGameElements() {
     difficultyContainer.classList.remove('hidden');
 }
 
-// ì¸íŠ¸ë¡œ í™”ë©´ í‘œì‹œ í•¨ìˆ˜
+// ?¸?Š¸ë¡? ?™”ë©? ?‘œ?‹œ ?•¨?ˆ˜
 function showIntroScreen() {
     introScreen.classList.remove('hidden');
 }
 
-// ì¸íŠ¸ë¡œ í™”ë©´ ìˆ¨ê¸°ê¸° í•¨ìˆ˜
+// ?¸?Š¸ë¡? ?™”ë©? ?ˆ¨ê¸°ê¸° ?•¨?ˆ˜
 function hideIntroScreen() {
     introScreen.classList.add('hidden');
 }
 
-// ì¸íŠ¸ë¡œ í™”ë©´ì—ì„œ ë‚œì´ë„ ì„¤ì •
+// ?¸?Š¸ë¡? ?™”ë©´ì—?„œ ?‚œ?´?„ ?„¤? •
 function setDifficultyIntro(level) {
-    // ëª¨ë“  ë‚œì´ë„ ë²„íŠ¼ì—ì„œ active í´ë˜ìŠ¤ ì œê±°
+    // ëª¨ë“  ?‚œ?´?„ ë²„íŠ¼?—?„œ active ?´?˜?Š¤ ? œê±?
     easyButtonIntro.classList.remove('active');
     normalButtonIntro.classList.remove('active');
     hardButtonIntro.classList.remove('active');
     
-    // ì„ íƒí•œ ë‚œì´ë„ì— ë”°ë¼ maxNumber ì„¤ì • ë° ë²„íŠ¼ í™œì„±í™”
+    // ?„ ?ƒ?•œ ?‚œ?´?„?— ?”°?¼ maxNumber ?„¤? • ë°? ë²„íŠ¼ ?™œ?„±?™”
     switch(level) {
         case 'easy':
             maxNumber = 20;
@@ -183,11 +198,11 @@ function setDifficultyIntro(level) {
             normalButtonIntro.classList.add('active');
     }
     
-    // ê²Œì„ í™”ë©´ì˜ ë‚œì´ë„ ë²„íŠ¼ë„ ë™ê¸°í™”
+    // ê²Œì„ ?™”ë©´ì˜ ?‚œ?´?„ ë²„íŠ¼?„ ?™ê¸°í™”
     syncDifficultyButtons(level);
 }
 
-// ê²Œì„ í™”ë©´ì˜ ë‚œì´ë„ ë²„íŠ¼ ë™ê¸°í™”
+// ê²Œì„ ?™”ë©´ì˜ ?‚œ?´?„ ë²„íŠ¼ ?™ê¸°í™”
 function syncDifficultyButtons(level) {
     easyButton.classList.remove('active');
     normalButton.classList.remove('active');
@@ -206,31 +221,31 @@ function syncDifficultyButtons(level) {
     }
 }
 
-// ì¸íŠ¸ë¡œì—ì„œ ê²Œì„ ì‹œì‘
+// ?¸?Š¸ë¡œì—?„œ ê²Œì„ ?‹œ?‘
 function startFromIntro() {
     hideIntroScreen();
     
-    // ê²Œì„ ë³´ë“œ ìš”ì†Œ í™•ì‹¤íˆ í‘œì‹œ
+    // ê²Œì„ ë³´ë“œ ?š”?†Œ ?™•?‹¤?ˆ ?‘œ?‹œ
     gameBoard.classList.remove('hidden');
     gameBoard.style.visibility = 'visible';
     gameBoard.style.display = 'block';
     
     showGameElements();
     
-    // ì•½ê°„ ì§€ì—°ì‹œì¼œ UIê°€ ì—…ë°ì´íŠ¸ëœ í›„ ê²Œì„ ì‹œì‘
+    // ?•½ê°? ì§??—°?‹œì¼? UIê°? ?—…?°?´?Š¸?œ ?›„ ê²Œì„ ?‹œ?‘
     setTimeout(() => {
         startGame();
     }, 100);
 }
 
-// ë‚œì´ë„ ì„¤ì • í•¨ìˆ˜
+// ?‚œ?´?„ ?„¤? • ?•¨?ˆ˜
 function setDifficulty(level) {
-    // ëª¨ë“  ë‚œì´ë„ ë²„íŠ¼ì—ì„œ active í´ë˜ìŠ¤ ì œê±°
+    // ëª¨ë“  ?‚œ?´?„ ë²„íŠ¼?—?„œ active ?´?˜?Š¤ ? œê±?
     easyButton.classList.remove('active');
     normalButton.classList.remove('active');
     hardButton.classList.remove('active');
     
-    // ì„ íƒí•œ ë‚œì´ë„ì— ë”°ë¼ maxNumber ì„¤ì • ë° ë²„íŠ¼ í™œì„±í™”
+    // ?„ ?ƒ?•œ ?‚œ?´?„?— ?”°?¼ maxNumber ?„¤? • ë°? ë²„íŠ¼ ?™œ?„±?™”
     switch(level) {
         case 'easy':
             maxNumber = 20;
@@ -250,36 +265,36 @@ function setDifficulty(level) {
     }
 }
 
-// ê²Œì„ ì‹œì‘ í•¨ìˆ˜
+// ê²Œì„ ?‹œ?‘ ?•¨?ˆ˜
 function startGame() {
     gameActive = true;
     gamePaused = false;
     currentTarget = 1;
-    mistakes = 0; // ì‹¤ìˆ˜ ì¹´ìš´í„° ì´ˆê¸°í™”
+    mistakes = 0; // ?‹¤?ˆ˜ ì¹´ìš´?„° ì´ˆê¸°?™”
     totalPausedTime = 0;
     currentNumberElement.textContent = currentTarget;
     
-    // ê²Œì„ ë³´ë“œê°€ í™•ì‹¤íˆ í‘œì‹œë˜ë„ë¡ í•¨
+    // ê²Œì„ ë³´ë“œê°? ?™•?‹¤?ˆ ?‘œ?‹œ?˜?„ë¡? ?•¨
     gameBoard.classList.remove('hidden');
     gameBoard.style.visibility = 'visible';
     gameBoard.style.display = 'block';
     
-    // ì‹œì‘/ì¤‘ì§€ ë²„íŠ¼ ìƒíƒœ ë³€ê²½
+    // ?‹œ?‘/ì¤‘ì?? ë²„íŠ¼ ?ƒ?ƒœ ë³?ê²?
     startButton.classList.add('hidden');
     difficultyContainer.classList.add('hidden');
     pauseButton.classList.remove('hidden');
     restartButton.classList.remove('hidden');
     
-    // íƒ€ì´ë¨¸ ì´ˆê¸°í™” ë° ì‹œì‘
+    // ????´ë¨? ì´ˆê¸°?™” ë°? ?‹œ?‘
     resetTimer();
     startTimer();
     
-    // ê²Œì„ ë³´ë“œ ì´ˆê¸°í™” ë° ìˆ«ì ìƒì„±
+    // ê²Œì„ ë³´ë“œ ì´ˆê¸°?™” ë°? ?ˆ«? ?ƒ?„±
     clearGameBoard();
     generateNumbers();
 }
 
-// ê²Œì„ ì¼ì‹œì •ì§€ í•¨ìˆ˜
+// ê²Œì„ ?¼?‹œ? •ì§? ?•¨?ˆ˜
 function pauseGame() {
     if (!gameActive || gamePaused) return;
     
@@ -287,49 +302,49 @@ function pauseGame() {
     pauseStartTime = new Date();
     stopTimer();
     
-    // ë²„íŠ¼ ìƒíƒœ ë³€ê²½
+    // ë²„íŠ¼ ?ƒ?ƒœ ë³?ê²?
     pauseButton.classList.add('hidden');
     resumeButton.classList.remove('hidden');
     
-    // ê²Œì„ ë³´ë“œì— ì¼ì‹œì •ì§€ ì˜¤ë²„ë ˆì´ ì¶”ê°€
+    // ê²Œì„ ë³´ë“œ?— ?¼?‹œ? •ì§? ?˜¤ë²„ë ˆ?´ ì¶”ê??
     const pauseOverlay = document.createElement('div');
     pauseOverlay.className = 'pause-overlay';
-    pauseOverlay.innerHTML = '<div class="pause-message">ì¼ì‹œì •ì§€ë¨</div>';
+    pauseOverlay.innerHTML = '<div class="pause-message">?¼?‹œ? •ì§??¨</div>';
     gameBoard.appendChild(pauseOverlay);
 }
 
-// ê²Œì„ ì¬ê°œ í•¨ìˆ˜
+// ê²Œì„ ?¬ê°? ?•¨?ˆ˜
 function resumeGame() {
     if (!gameActive || !gamePaused) return;
     
-    // ì¼ì‹œì •ì§€ëœ ì‹œê°„ ê³„ì‚°
+    // ?¼?‹œ? •ì§??œ ?‹œê°? ê³„ì‚°
     const now = new Date();
     totalPausedTime += now - pauseStartTime;
     
     gamePaused = false;
     
-    // ë²„íŠ¼ ìƒíƒœ ë³€ê²½
+    // ë²„íŠ¼ ?ƒ?ƒœ ë³?ê²?
     resumeButton.classList.add('hidden');
     pauseButton.classList.remove('hidden');
     
-    // ì¼ì‹œì •ì§€ ì˜¤ë²„ë ˆì´ ì œê±°
+    // ?¼?‹œ? •ì§? ?˜¤ë²„ë ˆ?´ ? œê±?
     const pauseOverlay = document.querySelector('.pause-overlay');
     if (pauseOverlay) {
         pauseOverlay.remove();
     }
     
-    // íƒ€ì´ë¨¸ ì¬ì‹œì‘
+    // ????´ë¨? ?¬?‹œ?‘
     startTimer();
 }
 
-// ê²Œì„ ì¬ì„¤ì • í™•ì¸ í•¨ìˆ˜
+// ê²Œì„ ?¬?„¤? • ?™•?¸ ?•¨?ˆ˜
 function confirmResetGame() {
-    if (confirm('ì •ë§ë¡œ ê²Œì„ì„ í¬ê¸°í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')) {
+    if (confirm('? •ë§ë¡œ ê²Œì„?„ ?¬ê¸°í•˜?‹œê² ìŠµ?‹ˆê¹??')) {
         resetGame();
     }
 }
 
-// ê²Œì„ ì¬ì„¤ì • í•¨ìˆ˜
+// °ÔÀÓ Àç¼³Á¤ ÇÔ¼ö
 function resetGame() {
     stopTimer();
     resultScreen.classList.add('hidden');
@@ -338,123 +353,128 @@ function resetGame() {
     currentTarget = 1;
     currentNumberElement.textContent = currentTarget;
     
-    // ë²„íŠ¼ ìƒíƒœ ë³€ê²½
+    // ¹öÆ° »óÅÂ º¯°æ
     pauseButton.classList.add('hidden');
     resumeButton.classList.add('hidden');
     restartButton.classList.add('hidden');
     startButton.classList.remove('hidden');
     difficultyContainer.classList.remove('hidden');
     
-    // ê²Œì„ ë³´ë“œ ì´ˆê¸°í™”
+    // ·©Å· °ü·Ã ¿ä¼Ò ÃÊ±âÈ­
+    saveScoreButton.disabled = false;
+    saveScoreButton.textContent = '±â·Ï ÀúÀå';
+    rankingScreen.classList.add('hidden');
+    
+    // °ÔÀÓ º¸µå ÃÊ±âÈ­
     clearGameBoard();
 }
 
-// ê²Œì„ ë³´ë“œ ì´ˆê¸°í™” í•¨ìˆ˜
+// ê²Œì„ ë³´ë“œ ì´ˆê¸°?™” ?•¨?ˆ˜
 function clearGameBoard() {
     gameBoard.innerHTML = '';
     numberElements = [];
 }
 
-// ìˆ«ì ìƒì„± ë° ê·¸ë¦¬ë“œ ë°°ì¹˜ í•¨ìˆ˜
+// ?ˆ«? ?ƒ?„± ë°? ê·¸ë¦¬?“œ ë°°ì¹˜ ?•¨?ˆ˜
 function generateNumbers() {
     const boardRect = gameBoard.getBoundingClientRect();
     const boardWidth = boardRect.width;
     const boardHeight = boardRect.height;
     
-    console.log("ê²Œì„ ë³´ë“œ í¬ê¸°:", boardWidth, "x", boardHeight);
+    console.log("ê²Œì„ ë³´ë“œ ?¬ê¸?:", boardWidth, "x", boardHeight);
     
-    // ê²Œì„ ë³´ë“œê°€ ë„ˆë¬´ ì‘ìœ¼ë©´ ì¡°ì •
+    // ê²Œì„ ë³´ë“œê°? ?„ˆë¬? ?‘?œ¼ë©? ì¡°ì •
     if (boardWidth < 100 || boardHeight < 100) {
         gameBoard.style.minHeight = "60vh";
         gameBoard.style.height = "60vh";
         gameBoard.getBoundingClientRect();
     }
     
-    // ê·¸ë¦¬ë“œ í¬ê¸° ê³„ì‚° (ë‚œì´ë„ë³„ ìµœì í™”)
+    // ê·¸ë¦¬?“œ ?¬ê¸? ê³„ì‚° (?‚œ?´?„ë³? ìµœì ?™”)
     const numElements = maxNumber;
     let gridSize;
     
-    // ë‚œì´ë„ë³„ ê·¸ë¦¬ë“œ í¬ê¸° ìµœì í™”
-    if (numElements <= 20) { // ì‰¬ì›€
-        gridSize = 5; // 5x5 ê·¸ë¦¬ë“œ (20ê°œ ìš”ì†Œì— ìµœì )
+    // ?‚œ?´?„ë³? ê·¸ë¦¬?“œ ?¬ê¸? ìµœì ?™”
+    if (numElements <= 20) { // ?‰¬???
+        gridSize = 5; // 5x5 ê·¸ë¦¬?“œ (20ê°? ?š”?†Œ?— ìµœì )
     } else if (numElements <= 30) { // ë³´í†µ
-        gridSize = 6; // 6x6 ê·¸ë¦¬ë“œ (30ê°œ ìš”ì†Œì— ìµœì )
-    } else { // ì–´ë ¤ì›€
-        gridSize = 7; // 7x7 ê·¸ë¦¬ë“œ (40ê°œ ìš”ì†Œì— ìµœì )
+        gridSize = 6; // 6x6 ê·¸ë¦¬?“œ (30ê°? ?š”?†Œ?— ìµœì )
+    } else { // ?–´? ¤???
+        gridSize = 7; // 7x7 ê·¸ë¦¬?“œ (40ê°? ?š”?†Œ?— ìµœì )
     }
     
-    console.log("ê·¸ë¦¬ë“œ í¬ê¸°:", gridSize, "x", gridSize);
+    console.log("ê·¸ë¦¬?“œ ?¬ê¸?:", gridSize, "x", gridSize);
     
-    // ëª¨ë°”ì¼ ê¸°ê¸°ì¸ì§€ í™•ì¸
+    // ëª¨ë°”?¼ ê¸°ê¸°?¸ì§? ?™•?¸
     const isMobile = window.innerWidth <= 480;
     
-    // ìš”ì†Œ í¬ê¸° ê³„ì‚° (ì—¬ë°± í¬í•¨)
+    // ?š”?†Œ ?¬ê¸? ê³„ì‚° (?—¬ë°? ?¬?•¨)
     const cellSize = Math.min(
         Math.floor(boardWidth / gridSize) * 0.95,
         Math.floor(boardHeight / gridSize) * 0.95
     );
     
-    // ìš”ì†Œ ì‹¤ì œ í¬ê¸° (ëª¨ë°”ì¼ì—ì„œëŠ” ë” ì‘ê²Œ)
+    // ?š”?†Œ ?‹¤? œ ?¬ê¸? (ëª¨ë°”?¼?—?„œ?Š” ?” ?‘ê²?)
     const elementSize = isMobile ? 
         Math.floor(cellSize * 0.75) : 
         Math.floor(cellSize * 0.85);
     const margin = Math.floor((cellSize - elementSize) / 2);
     
-    // ê·¸ë¦¬ë“œ ì‹œì‘ ìœ„ì¹˜ ê³„ì‚° (ì¤‘ì•™ ì •ë ¬)
+    // ê·¸ë¦¬?“œ ?‹œ?‘ ?œ„ì¹? ê³„ì‚° (ì¤‘ì•™ ? •? ¬)
     const startX = Math.floor((boardWidth - cellSize * gridSize) / 2) + margin;
     const startY = Math.floor((boardHeight - cellSize * gridSize) / 2) + margin;
     
-    console.log("ì…€ í¬ê¸°:", cellSize, "ìš”ì†Œ í¬ê¸°:", elementSize, "ì—¬ë°±:", margin);
+    console.log("??? ?¬ê¸?:", cellSize, "?š”?†Œ ?¬ê¸?:", elementSize, "?—¬ë°?:", margin);
     
-    // ìˆ«ì ë°ì´í„° ë²”ìœ„ ì¶”ì¶œ ë° ì…”í”Œ
+    // ?ˆ«? ?°?´?„° ë²”ìœ„ ì¶”ì¶œ ë°? ?…”?”Œ
     const shuffledNumbers = shuffleArray(numbersData.slice(0, maxNumber));
     
-    // ê·¸ë¦¬ë“œì— ìš”ì†Œ ë°°ì¹˜
+    // ê·¸ë¦¬?“œ?— ?š”?†Œ ë°°ì¹˜
     shuffledNumbers.forEach((numberData, index) => {
-        // í–‰ê³¼ ì—´ ìœ„ì¹˜ ê³„ì‚°
+        // ?–‰ê³? ?—´ ?œ„ì¹? ê³„ì‚°
         const row = Math.floor(index / gridSize);
         const col = index % gridSize;
         
-        // ëœë¤í•˜ê²Œ ìˆ«ì í‘œí˜„ í˜•ì‹ ì„ íƒ (ì•„ë¼ë¹„ì•„, ì˜ì–´, í•œêµ­ì–´)
+        // ?œ?¤?•˜ê²? ?ˆ«? ?‘œ?˜„ ?˜•?‹ ?„ ?ƒ (?•„?¼ë¹„ì•„, ?˜?–´, ?•œêµ??–´)
         const formatIndex = Math.floor(Math.random() * 3);
         const format = numberData.formats[formatIndex];
         
-        // ìˆ«ì ìš”ì†Œ ìƒì„±
+        // ?ˆ«? ?š”?†Œ ?ƒ?„±
         const element = document.createElement('div');
         element.className = 'number-item';
         element.dataset.value = numberData.value;
         element.textContent = format;
         
-        // í˜•ì‹ì— ë”°ë¥¸ ìŠ¤íƒ€ì¼ í´ë˜ìŠ¤ ì¶”ê°€
+        // ?˜•?‹?— ?”°ë¥? ?Š¤????¼ ?´?˜?Š¤ ì¶”ê??
         if (formatIndex === 0) element.classList.add('number-arabic');
         else if (formatIndex === 1) element.classList.add('number-english');
         else element.classList.add('number-korean');
         
-        // ìˆ«ì í¬ê¸°ì— ë”°ë¥¸ ìŠ¤íƒ€ì¼ í´ë˜ìŠ¤ ì¶”ê°€
+        // ?ˆ«? ?¬ê¸°ì— ?”°ë¥? ?Š¤????¼ ?´?˜?Š¤ ì¶”ê??
         if (numberData.value <= 9) element.classList.add('small-number');
         else if (numberData.value <= 19) element.classList.add('medium-number');
         else element.classList.add('large-number');
         
-        // ëª¨ë°”ì¼ í™”ë©´ì—ì„œëŠ” í°íŠ¸ í¬ê¸° ì¡°ì •
+        // ëª¨ë°”?¼ ?™”ë©´ì—?„œ?Š” ?°?Š¸ ?¬ê¸? ì¡°ì •
         if (isMobile) {
             element.classList.add('mobile-item');
         }
         
-        // ìš”ì†Œ í¬ê¸° ë° ìœ„ì¹˜ ì„¤ì •
+        // ?š”?†Œ ?¬ê¸? ë°? ?œ„ì¹? ?„¤? •
         element.style.width = `${elementSize}px`;
         element.style.height = `${elementSize}px`;
         element.style.left = `${startX + col * cellSize}px`;
         element.style.top = `${startY + row * cellSize}px`;
         
-        // ê²Œì„ ë³´ë“œì— ìš”ì†Œ ì¶”ê°€
+        // ê²Œì„ ë³´ë“œ?— ?š”?†Œ ì¶”ê??
         gameBoard.appendChild(element);
         numberElements.push(element);
         
-        console.log(`ìˆ«ì ${numberData.value} (${format}) ìƒì„±: ìœ„ì¹˜ (${row}, ${col})`);
+        console.log(`?ˆ«? ${numberData.value} (${format}) ?ƒ?„±: ?œ„ì¹? (${row}, ${col})`);
     });
 }
 
-// ë°°ì—´ì„ ë¬´ì‘ìœ„ë¡œ ì„ëŠ” í•¨ìˆ˜
+// ë°°ì—´?„ ë¬´ì‘?œ„ë¡? ?„?Š” ?•¨?ˆ˜
 function shuffleArray(array) {
     const newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -464,37 +484,37 @@ function shuffleArray(array) {
     return newArray;
 }
 
-// ìˆ«ì í´ë¦­ ì²˜ë¦¬ í•¨ìˆ˜
+// ?ˆ«? ?´ë¦? ì²˜ë¦¬ ?•¨?ˆ˜
 function handleNumberClick(event) {
     if (!gameActive || gamePaused) return;
     
     const element = event.target;
     
-    // ìˆ«ì ìš”ì†Œì¸ì§€ í™•ì¸
+    // ?ˆ«? ?š”?†Œ?¸ì§? ?™•?¸
     if (element.classList.contains('number-item')) {
         const value = parseInt(element.dataset.value);
         
-        // í˜„ì¬ ëª©í‘œ ìˆ«ìì™€ ì¼ì¹˜í•˜ëŠ”ì§€ í™•ì¸
+        // ?˜„?¬ ëª©í‘œ ?ˆ«???? ?¼ì¹˜í•˜?Š”ì§? ?™•?¸
         if (value === currentTarget) {
-            // ì‹œê°ì  í”¼ë“œë°±
+            // ?‹œê°ì  ?”¼?“œë°?
             element.classList.add('correct');
             playCorrectSound();
             
-            // ë‹¤ìŒ ëª©í‘œ ìˆ«ìë¡œ ì—…ë°ì´íŠ¸
+            // ?‹¤?Œ ëª©í‘œ ?ˆ«?ë¡? ?—…?°?´?Š¸
             currentTarget++;
             currentNumberElement.textContent = currentTarget;
             
-            // ëª¨ë“  ìˆ«ìë¥¼ ì°¾ì•˜ëŠ”ì§€ í™•ì¸
+            // ëª¨ë“  ?ˆ«?ë¥? ì°¾ì•˜?Š”ì§? ?™•?¸
             if (currentTarget > maxNumber) {
                 gameComplete();
             }
         } else {
-            // í‹€ë¦° ê²½ìš° ì‹œê°ì  í”¼ë“œë°±
+            // ???ë¦? ê²½ìš° ?‹œê°ì  ?”¼?“œë°?
             mistakes++;
             element.classList.add('wrong');
             playWrongSound();
             
-            // ì ì‹œ í›„ ì‹œê°ì  í”¼ë“œë°± ì œê±°
+            // ? ?‹œ ?›„ ?‹œê°ì  ?”¼?“œë°? ? œê±?
             setTimeout(() => {
                 element.classList.remove('wrong');
             }, 300);
@@ -502,9 +522,9 @@ function handleNumberClick(event) {
     }
 }
 
-// íš¨ê³¼ìŒ ì¬ìƒ í•¨ìˆ˜
+// ?š¨ê³¼ìŒ ?¬?ƒ ?•¨?ˆ˜
 function playCorrectSound() {
-    // ê°„ë‹¨í•œ íš¨ê³¼ìŒ ì¬ìƒ (ì›¹ ì˜¤ë””ì˜¤ API ì‚¬ìš©)
+    // ê°„ë‹¨?•œ ?š¨ê³¼ìŒ ?¬?ƒ (?›¹ ?˜¤?””?˜¤ API ?‚¬?š©)
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const oscillator = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
@@ -521,7 +541,7 @@ function playCorrectSound() {
 }
 
 function playWrongSound() {
-    // ê°„ë‹¨í•œ íš¨ê³¼ìŒ ì¬ìƒ (ì›¹ ì˜¤ë””ì˜¤ API ì‚¬ìš©)
+    // ê°„ë‹¨?•œ ?š¨ê³¼ìŒ ?¬?ƒ (?›¹ ?˜¤?””?˜¤ API ?‚¬?š©)
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const oscillator = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
@@ -537,26 +557,32 @@ function playWrongSound() {
     oscillator.stop(audioContext.currentTime + 0.15);
 }
 
-// ê²Œì„ ì™„ë£Œ í•¨ìˆ˜
+// ê²Œì„ ?™„ë£? ?•¨?ˆ˜
 function gameComplete() {
     gameActive = false;
     stopTimer();
     
-    // ê²°ê³¼ í™”ë©´ í‘œì‹œ
+    // ê²°ê³¼ ?™”ë©? ?‘œ?‹œ
     finalTimeElement.textContent = timerElement.textContent;
     
-    // í‹€ë¦° íšŸìˆ˜ í‘œì‹œ ìš”ì†Œ ì¶”ê°€
+    // ???ë¦? ?šŸ?ˆ˜ ?‘œ?‹œ ?š”?†Œ ì¶”ê??
     const mistakesElement = document.getElementById('mistakes-count');
     if (mistakesElement) {
         mistakesElement.textContent = mistakes;
     }
     
-    // ê²°ê³¼ í™”ë©´ í‘œì‹œ - ëª¨ë“  hidden ì†ì„± ì œê±°
+    // ÀÌÀü¿¡ ÀúÀåµÈ ÀÌ¸§ÀÌ ÀÖÀ¸¸é Ç¥½Ã
+    const savedName = localStorage.getItem('playerName');
+    if (savedName) {
+        playerNameInput.value = savedName;
+    }
+    
+    // ê²°ê³¼ ?™”ë©? ?‘œ?‹œ - ëª¨ë“  hidden ?†?„± ? œê±?
     resultScreen.classList.remove('hidden');
     resultScreen.style.display = 'flex';
 }
 
-// íƒ€ì´ë¨¸ ê´€ë ¨ í•¨ìˆ˜ë“¤
+// ????´ë¨? ê´?? ¨ ?•¨?ˆ˜?“¤
 function startTimer() {
     if (!startTime) {
         startTime = new Date();
@@ -586,10 +612,143 @@ function updateTimer() {
     timerElement.textContent = `${minutes}:${seconds}:${milliseconds}`;
 }
 
-// í™”ë©´ í¬ê¸° ë³€ê²½ ì‹œ ìš”ì†Œ ì¬ë°°ì¹˜
+// ?™”ë©? ?¬ê¸? ë³?ê²? ?‹œ ?š”?†Œ ?¬ë°°ì¹˜
 window.addEventListener('resize', () => {
     if (gameActive) {
         clearGameBoard();
         generateNumbers();
     }
-}); 
+});
+
+// ===== ·©Å· ½Ã½ºÅÛ ±â´É =====
+
+// Á¡¼ö ÀúÀå ÇÔ¼ö
+function saveScore() {
+    const playerName = playerNameInput.value.trim();
+    if (!playerName) {
+        alert('ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä!');
+        return;
+    }
+    
+    // ÇÃ·¹ÀÌ¾î ÀÌ¸§ ÀúÀå
+    localStorage.setItem('playerName', playerName);
+    
+    // ³­ÀÌµµº° ·©Å· Å°
+    const difficultyKey = getDifficultyKey();
+    
+    // »õ·Î¿î Á¡¼ö µ¥ÀÌÅÍ
+    const newScore = {
+        name: playerName,
+        time: timerElement.textContent,
+        timeValue: getTimeValueInMilliseconds(timerElement.textContent),
+        mistakes: mistakes,
+        date: new Date().toLocaleDateString(),
+        difficulty: maxNumber
+    };
+    
+    // ±âÁ¸ ·©Å· µ¥ÀÌÅÍ °¡Á®¿À±â
+    let rankings = JSON.parse(localStorage.getItem(difficultyKey)) || [];
+    
+    // »õ Á¡¼ö Ãß°¡
+    rankings.push(newScore);
+    
+    // ½Ã°£ ±âÁØÀ¸·Î Á¤·Ä (¿À¸§Â÷¼ø)
+    rankings.sort((a, b) => a.timeValue - b.timeValue);
+    
+    // »óÀ§ 10°³¸¸ À¯Áö
+    rankings = rankings.slice(0, 10);
+    
+    // ÀúÀå
+    localStorage.setItem(difficultyKey, JSON.stringify(rankings));
+    
+    // ÀúÀå ¹öÆ° ºñÈ°¼ºÈ­ ¹× ¸Ş½ÃÁö Ç¥½Ã
+    saveScoreButton.disabled = true;
+    saveScoreButton.textContent = 'ÀúÀåµÊ!';
+    
+    // ·©Å· Ç¥½Ã ¾÷µ¥ÀÌÆ® (ÀÌ¹Ì ·©Å· È­¸éÀÌ Ç¥½ÃµÇ¾î ÀÖÀ» °æ¿ì)
+    if (!rankingScreen.classList.contains('hidden')) {
+        updateRankingDisplay();
+    }
+}
+
+// ·©Å· È­¸é Ç¥½Ã ÇÔ¼ö
+function showRanking() {
+    // ÇöÀç ³­ÀÌµµ¿¡ ¸Â´Â ¿É¼Ç ¼±ÅÃ
+    const difficultyKey = getDifficultyKey();
+    rankingDifficultySelect.value = difficultyKey.split('_')[1];
+    
+    // ·©Å· Å×ÀÌºí ¾÷µ¥ÀÌÆ®
+    updateRankingDisplay();
+    
+    // ·©Å· È­¸é Ç¥½Ã
+    rankingScreen.classList.remove('hidden');
+}
+
+// ·©Å· È­¸é ¼û±â±â ÇÔ¼ö
+function hideRanking() {
+    rankingScreen.classList.add('hidden');
+}
+
+// ·©Å· Ç¥½Ã ¾÷µ¥ÀÌÆ® ÇÔ¼ö
+function updateRankingDisplay() {
+    // ÇöÀç ¼±ÅÃµÈ ³­ÀÌµµ¿¡ µû¸¥ Å° °¡Á®¿À±â
+    const difficultyValue = rankingDifficultySelect.value;
+    const difficultyKey = `rankings_${difficultyValue}`;
+    
+    // ·©Å· µ¥ÀÌÅÍ °¡Á®¿À±â
+    const rankings = JSON.parse(localStorage.getItem(difficultyKey)) || [];
+    
+    // Å×ÀÌºí ÃÊ±âÈ­
+    rankingTableBody.innerHTML = '';
+    
+    // µ¥ÀÌÅÍ°¡ ¾øÀ» °æ¿ì
+    if (rankings.length === 0) {
+        const row = document.createElement('tr');
+        row.innerHTML = '<td colspan="5">±â·ÏÀÌ ¾ø½À´Ï´Ù.</td>';
+        rankingTableBody.appendChild(row);
+        return;
+    }
+    
+    // ·©Å· µ¥ÀÌÅÍ Ç¥½Ã
+    rankings.forEach((score, index) => {
+        const row = document.createElement('tr');
+        
+        // ÇöÀç ÇÃ·¹ÀÌ¾î °­Á¶
+        const isCurrentPlayer = score.name === playerNameInput.value && 
+                              score.time === finalTimeElement.textContent;
+        if (isCurrentPlayer) {
+            row.className = 'highlight';
+        }
+        
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${score.name}</td>
+            <td>${score.time}</td>
+            <td>${score.mistakes}</td>
+            <td>${score.date}</td>
+        `;
+        
+        rankingTableBody.appendChild(row);
+    });
+}
+
+// ³­ÀÌµµ¿¡ µû¸¥ ·©Å· Å° ¹İÈ¯ ÇÔ¼ö
+function getDifficultyKey() {
+    let difficultyKey;
+    
+    if (maxNumber <= 20) {
+        difficultyKey = 'rankings_easy';
+    } else if (maxNumber <= 30) {
+        difficultyKey = 'rankings_normal';
+    } else {
+        difficultyKey = 'rankings_hard';
+    }
+    
+    return difficultyKey;
+}
+
+// ½Ã°£ ¹®ÀÚ¿­À» ¹Ğ¸®ÃÊ·Î º¯È¯ÇÏ´Â ÇÔ¼ö
+function getTimeValueInMilliseconds(timeString) {
+    const [minutes, seconds, milliseconds] = timeString.split(':').map(Number);
+    return (minutes * 60 * 1000) + (seconds * 1000) + (milliseconds * 10);
+} 

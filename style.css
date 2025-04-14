@@ -97,6 +97,11 @@ h1 {
     font-size: 1rem;
     z-index: 10;
     border: 2px solid #ccc;
+    word-break: break-word;
+    text-align: center;
+    padding: 3px;
+    overflow: hidden;
+    line-height: 1.1;
 }
 
 .number-item:hover {
@@ -213,7 +218,7 @@ button:hover {
     color: var(--secondary-color);
 }
 
-/* 아라비아 숫자, 영어, 한국어 스타일 구분 */
+/* Number format styles - Arabic, English, Korean */
 .number-arabic {
     background-color: #e1f5fe;
     color: #0277bd;
@@ -224,6 +229,15 @@ button:hover {
     background-color: #e8f5e9;
     color: #2e7d32;
     border-color: #2e7d32;
+    font-size: 0.85rem;
+}
+
+.number-english.large-number {
+    font-size: 0.7rem;
+}
+
+.number-english.medium-number {
+    font-size: 0.75rem;
 }
 
 .number-korean {
@@ -232,7 +246,7 @@ button:hover {
     border-color: #e65100;
 }
 
-/* 그리드 레이아웃 스타일 */
+/* Grid layout styles */
 .game-board {
     display: flex;
     justify-content: center;
@@ -240,7 +254,7 @@ button:hover {
     background-color: #f0f0f0;
 }
 
-/* 모바일 최적화 */
+/* Mobile optimization */
 @media (max-width: 480px) {
     .number-item {
         border-radius: 8px;
@@ -266,22 +280,20 @@ button:hover {
     }
 }
 
-/* 작은 숫자를 위한 스타일 (1-9) */
+/* Size-based styles for numbers */
 .small-number {
     font-size: 1.1rem;
 }
 
-/* 중간 숫자를 위한 스타일 (10-19) */
 .medium-number {
     font-size: 0.9rem;
 }
 
-/* 큰 숫자를 위한 스타일 (20-30) */
 .large-number {
     font-size: 0.85rem;
 }
 
-/* 일시정지 오버레이 스타일 */
+/* Pause overlay styles */
 .pause-overlay {
     position: absolute;
     top: 0;
@@ -305,7 +317,7 @@ button:hover {
     border-radius: 10px;
 }
 
-/* 게임 컨트롤 버튼 스타일 */
+/* Game control button styles */
 #start-button {
     background-color: var(--success-color);
 }
@@ -322,7 +334,7 @@ button:hover {
     background-color: var(--secondary-color);
 }
 
-/* 인트로 화면 스타일 */
+/* Intro screen styles */
 .intro-screen {
     position: fixed;
     top: 0;
@@ -387,7 +399,22 @@ button:hover {
     transform: scale(0.98);
 }
 
-/* 모바일 최적화 */
+/* Mobile element styles */
+.mobile-item {
+    font-size: 0.8rem !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-item.small-number {
+    font-size: 0.9rem !important;
+}
+
+.mobile-item.medium-number,
+.mobile-item.large-number {
+    font-size: 0.75rem !important;
+}
+
+/* Mobile optimization for intro screen */
 @media (max-width: 480px) {
     .intro-screen {
         padding: 15px;
@@ -422,17 +449,92 @@ button:hover {
     }
 }
 
-/* 모바일 요소 스타일 */
-.mobile-item {
-    font-size: 0.8rem !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+/* Ranking system styles */
+.ranking-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
 }
 
-.mobile-item.small-number {
-    font-size: 0.9rem !important;
+.ranking-title {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
-.mobile-item.medium-number,
-.mobile-item.large-number {
-    font-size: 0.75rem !important;
+.ranking-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.ranking-list th, 
+.ranking-list td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.ranking-list th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+.ranking-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.ranking-list tr:hover {
+    background-color: #f0f0f0;
+}
+
+.ranking-list .highlight {
+    background-color: #fff9c4;
+    font-weight: bold;
+}
+
+.ranking-info {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.close-ranking-button {
+    display: block;
+    margin: 15px auto 5px;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.show-ranking-button {
+    margin-top: 10px;
+}
+
+/* Mobile optimization for ranking */
+@media (max-width: 480px) {
+    .ranking-container {
+        padding: 15px;
+        margin: 15px auto;
+    }
+    
+    .ranking-title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .ranking-list th, 
+    .ranking-list td {
+        padding: 8px 5px;
+        font-size: 0.85rem;
+    }
 } 
