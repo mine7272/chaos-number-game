@@ -86,6 +86,11 @@ const easyButtonIntro = document.getElementById('easy-button-intro');
 const normalButtonIntro = document.getElementById('normal-button-intro');
 const hardButtonIntro = document.getElementById('hard-button-intro');
 
+// 마지막 윈도우 크기 저장
+let lastWindowWidth = window.innerWidth;
+let lastWindowHeight = window.innerHeight;
+const RESIZE_THRESHOLD = 50; // 크기 변화 무시 임계값 (px)
+
 // ?씠踰ㅽ듃 由ъ뒪?꼫 ?꽕?젙
 document.addEventListener('DOMContentLoaded', () => {
     gameBoard = document.getElementById('game-board');
@@ -270,28 +275,35 @@ function startGame() {
     gameActive = true;
     gamePaused = false;
     currentTarget = 1;
-    mistakes = 0; // ?떎?닔 移댁슫?꽣 珥덇린?솕
+    mistakes = 0; // 실수 카운터 초기화
     totalPausedTime = 0;
     currentNumberElement.textContent = currentTarget;
     
-    // 寃뚯엫 蹂대뱶媛? ?솗?떎?엳 ?몴?떆?릺?룄濡? ?븿
+    // 모바일에서 스크롤 방지
+    document.body.classList.add('game-active');
+    
+    // 게임 보드가 확실히 표시되도록 함
     gameBoard.classList.remove('hidden');
     gameBoard.style.visibility = 'visible';
     gameBoard.style.display = 'block';
     
-    // ?떆?옉/以묒?? 踰꾪듉 ?긽?깭 蹂?寃?
+    // 시작/중지 버튼 상태 변경
     startButton.classList.add('hidden');
     difficultyContainer.classList.add('hidden');
     pauseButton.classList.remove('hidden');
     restartButton.classList.remove('hidden');
     
-    // ????씠癒? 珥덇린?솕 諛? ?떆?옉
+    // 타이머 초기화 및 시작
     resetTimer();
     startTimer();
     
-    // 寃뚯엫 蹂대뱶 珥덇린?솕 諛? ?닽?옄 ?깮?꽦
+    // 게임 보드 초기화 및 숫자 생성
     clearGameBoard();
     generateNumbers();
+    
+    // 최초 크기 저장
+    lastWindowWidth = window.innerWidth;
+    lastWindowHeight = window.innerHeight;
 }
 
 // 寃뚯엫 ?씪?떆?젙吏? ?븿?닔
@@ -352,6 +364,9 @@ function resetGame() {
     gamePaused = false;
     currentTarget = 1;
     currentNumberElement.textContent = currentTarget;
+    
+    // 스크롤 방지 해제
+    document.body.classList.remove('game-active');
     
     // 버튼 상태 변경
     pauseButton.classList.add('hidden');
@@ -562,10 +577,13 @@ function gameComplete() {
     gameActive = false;
     stopTimer();
     
-    // 寃곌낵 ?솕硫? ?몴?떆
+    // 스크롤 방지 해제
+    document.body.classList.remove('game-active');
+    
+    // 결과 화면 표시
     finalTimeElement.textContent = timerElement.textContent;
     
-    // ???由? ?슏?닔 ?몴?떆 ?슂?냼 異붽??
+    // 틀린 횟수 표시 요소 추가
     const mistakesElement = document.getElementById('mistakes-count');
     if (mistakesElement) {
         mistakesElement.textContent = mistakes;
@@ -577,7 +595,7 @@ function gameComplete() {
         playerNameInput.value = savedName;
     }
     
-    // 寃곌낵 ?솕硫? ?몴?떆 - 紐⑤뱺 hidden ?냽?꽦 ?젣嫄?
+    // 결과 화면 표시 - 모든 hidden 속성 제거
     resultScreen.classList.remove('hidden');
     resultScreen.style.display = 'flex';
 }
@@ -612,13 +630,36 @@ function updateTimer() {
     timerElement.textContent = `${minutes}:${seconds}:${milliseconds}`;
 }
 
-// ?솕硫? ?겕湲? 蹂?寃? ?떆 ?슂?냼 ?옱諛곗튂
+// 화면 크기 변경 시 요소 재배치
 window.addEventListener('resize', () => {
+    // 게임이 활성화되어 있을 때만 처리
     if (gameActive) {
-        clearGameBoard();
-        generateNumbers();
+        // 크기 변화가 임계값 이상일 때만 재배치
+        const widthChange = Math.abs(window.innerWidth - lastWindowWidth);
+        const heightChange = Math.abs(window.innerHeight - lastWindowHeight);
+        
+        if (widthChange > RESIZE_THRESHOLD || heightChange > RESIZE_THRESHOLD) {
+            // 현재 크기 저장
+            lastWindowWidth = window.innerWidth;
+            lastWindowHeight = window.innerHeight;
+            
+            // 게임 보드 재생성
+            clearGameBoard();
+            generateNumbers();
+        }
+    } else {
+        // 게임이 활성화되지 않은 경우 현재 크기 저장
+        lastWindowWidth = window.innerWidth;
+        lastWindowHeight = window.innerHeight;
     }
 });
+
+// 터치 이벤트 처리 (모바일에서 스크롤 방지)
+gameBoard.addEventListener('touchmove', function(e) {
+    if (gameActive) {
+        e.preventDefault();
+    }
+}, { passive: false });
 
 // ===== 랭킹 시스템 기능 =====
 
