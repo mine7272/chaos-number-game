@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>혼돈의 숫자 순서 맞추기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>숫자 순서 맞추기</h1>
+            <div class="timer-container">
+                <div class="timer">00:00:00</div>
+            </div>
+            <div class="current-target">
+                <span>현재 찾아야 할 숫자: </span>
+                <span id="current-number">1</span>
+            </div>
+        </div>
+        
+        <div id="intro-screen" class="intro-screen">
+            <h2>게임 설명</h2>
+            <div class="game-instructions">
+                <p><strong>게임 방법:</strong> 1부터 순서대로 숫자를 찾아 탭하세요!</p>
+                <p>숫자는 아라비아 숫자(1, 2, 3...), 영어 단어(one, two, three...), 한국어(일, 이, 삼...) 중 하나의 형태로 무작위 표시됩니다.</p>
+                <p>모든 숫자를 순서대로 빠르게 찾으면 승리합니다.</p>
+                <p>난이도에 따라 게임 진행 숫자가 달라집니다:</p>
+                <ul>
+                    <li><strong>쉬움:</strong> 1-20</li>
+                    <li><strong>보통:</strong> 1-30</li>
+                    <li><strong>어려움:</strong> 1-40</li>
+                </ul>
+            </div>
+            
+            <div class="difficulty-selector">
+                <p>난이도 선택:</p>
+                <div class="difficulty-buttons">
+                    <button id="easy-button-intro" class="difficulty-btn active">쉬움 (1-20)</button>
+                    <button id="normal-button-intro" class="difficulty-btn">보통 (1-30)</button>
+                    <button id="hard-button-intro" class="difficulty-btn">어려움 (1-40)</button>
+                </div>
+            </div>
+            
+            <button id="start-game-button" class="start-game-button">게임 시작하기</button>
+        </div>
+        
+        <div class="game-board hidden" id="game-board">
+            <!-- 숫자들이 여기에 동적으로 생성됩니다 -->
+        </div>
+        
+        <div class="game-controls">
+            <div class="difficulty-selector hidden" id="difficulty-container">
+                <p>난이도 선택:</p>
+                <div class="difficulty-buttons">
+                    <button id="easy-button" class="difficulty-btn active">쉬움 (1-20)</button>
+                    <button id="normal-button" class="difficulty-btn">보통 (1-30)</button>
+                    <button id="hard-button" class="difficulty-btn">어려움 (1-40)</button>
+                </div>
+            </div>
+            <button id="start-button">게임 시작</button>
+            <button id="pause-button" class="hidden">일시정지</button>
+            <button id="resume-button" class="hidden">계속하기</button>
+            <button id="restart-button" class="hidden">게임 포기</button>
+        </div>
+        
+        <div id="result-screen" class="result-screen hidden" style="display: none;">
+            <h2>게임 완료!</h2>
+            <p>걸린 시간: <span id="final-time">00:00:00</span></p>
+            <p>틀린 횟수: <span id="mistakes-count">0</span>회</p>
+            <button id="play-again-button">다시 하기</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 

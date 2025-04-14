@@ -1,0 +1,438 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4285f4;
+    --secondary-color: #ea4335;
+    --tertiary-color: #fbbc05;
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --number-bg: #fff;
+    --success-color: #34a853;
+}
+
+body {
+    font-family: 'Nanum Gothic', 'Malgun Gothic', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+}
+
+.game-container {
+    max-width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.timer-container {
+    margin-bottom: 10px;
+}
+
+.timer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.current-target {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#current-number {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.game-board {
+    position: relative;
+    flex-grow: 1;
+    min-height: 60vh;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-item {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--number-bg);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    font-weight: bold;
+    font-size: 1rem;
+    z-index: 10;
+    border: 2px solid #ccc;
+}
+
+.number-item:hover {
+    transform: scale(0.97);
+}
+
+.number-item:active {
+    transform: scale(0.92);
+}
+
+.correct {
+    background-color: var(--success-color);
+    color: white;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.wrong {
+    animation: shake 0.3s;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.game-controls {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.difficulty-selector {
+    margin-bottom: 15px;
+}
+
+.difficulty-selector p {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.difficulty-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.difficulty-btn {
+    background-color: #ccc;
+    color: #333;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+.difficulty-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.result-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.result-screen h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.result-screen p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+#final-time {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* 아라비아 숫자, 영어, 한국어 스타일 구분 */
+.number-arabic {
+    background-color: #e1f5fe;
+    color: #0277bd;
+    border-color: #0277bd;
+}
+
+.number-english {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-color: #2e7d32;
+}
+
+.number-korean {
+    background-color: #fff3e0;
+    color: #e65100;
+    border-color: #e65100;
+}
+
+/* 그리드 레이아웃 스타일 */
+.game-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 480px) {
+    .number-item {
+        border-radius: 8px;
+        font-size: 0.85rem;
+        border-width: 1px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .timer {
+        font-size: 1.3rem;
+    }
+    
+    button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .pause-message {
+        font-size: 1.5rem;
+    }
+}
+
+/* 작은 숫자를 위한 스타일 (1-9) */
+.small-number {
+    font-size: 1.1rem;
+}
+
+/* 중간 숫자를 위한 스타일 (10-19) */
+.medium-number {
+    font-size: 0.9rem;
+}
+
+/* 큰 숫자를 위한 스타일 (20-30) */
+.large-number {
+    font-size: 0.85rem;
+}
+
+/* 일시정지 오버레이 스타일 */
+.pause-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    border-radius: 10px;
+}
+
+.pause-message {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* 게임 컨트롤 버튼 스타일 */
+#start-button {
+    background-color: var(--success-color);
+}
+
+#pause-button {
+    background-color: var(--tertiary-color);
+}
+
+#resume-button {
+    background-color: var(--primary-color);
+}
+
+#restart-button {
+    background-color: var(--secondary-color);
+}
+
+/* 인트로 화면 스타일 */
+.intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.97);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 90;
+    padding: 20px;
+    overflow-y: auto;
+    padding-top: 50px;
+}
+
+.intro-screen h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.game-instructions {
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.game-instructions p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+.game-instructions ul {
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.game-instructions li {
+    margin-bottom: 8px;
+}
+
+.start-game-button {
+    background-color: var(--success-color);
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    transition: transform 0.2s;
+    margin-top: 20px;
+}
+
+.start-game-button:hover {
+    transform: scale(1.05);
+}
+
+.start-game-button:active {
+    transform: scale(0.98);
+}
+
+/* 모바일 최적화 */
+@media (max-width: 480px) {
+    .intro-screen {
+        padding: 15px;
+        padding-top: 30px;
+        justify-content: flex-start;
+    }
+    
+    .intro-screen h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .game-instructions {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .game-instructions p {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+    
+    .game-instructions ul {
+        margin-left: 20px;
+    }
+    
+    .start-game-button {
+        font-size: 1.1rem;
+        padding: 10px 25px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+}
+
+/* 모바일 요소 스타일 */
+.mobile-item {
+    font-size: 0.8rem !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-item.small-number {
+    font-size: 0.9rem !important;
+}
+
+.mobile-item.medium-number,
+.mobile-item.large-number {
+    font-size: 0.75rem !important;
+} 
