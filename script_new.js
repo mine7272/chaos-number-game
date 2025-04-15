@@ -684,12 +684,14 @@ function showRanking() {
     rankingScreen.style.width = '80%';
     rankingScreen.style.maxWidth = '500px';
     rankingScreen.style.maxHeight = '80%';
-    rankingScreen.style.zIndex = '1000';
-    rankingScreen.style.boxShadow = '0 0 20px rgba(0, 0, 0, 0.7)';
+    rankingScreen.style.zIndex = '1001'; // 오버레이(999)보다 더 높은 z-index 값
+    rankingScreen.style.boxShadow = '0 0 30px rgba(255, 255, 255, 0.5), 0 0 20px rgba(0, 0, 0, 0.3)';
     rankingScreen.style.borderRadius = '15px';
     rankingScreen.style.overflow = 'auto';
     rankingScreen.style.padding = '20px';
-    rankingScreen.style.backgroundColor = '#fff';
+    rankingScreen.style.backgroundColor = '#ffffff'; // 완전 불투명한 흰색
+    rankingScreen.style.border = '2px solid #4a90e2'; // 테두리 추가
+    rankingScreen.style.color = '#000'; // 텍스트 색상 검정으로 설정
     
     // 배경 어둡게 처리
     const overlay = document.createElement('div');
@@ -705,6 +707,31 @@ function showRanking() {
     
     // 오버레이 클릭 시 랭킹 닫기
     overlay.addEventListener('click', hideRanking);
+    
+    // 랭킹 테이블 스타일 개선
+    const rankingTable = rankingScreen.querySelector('table');
+    if (rankingTable) {
+        rankingTable.style.width = '100%';
+        rankingTable.style.borderCollapse = 'collapse';
+        rankingTable.style.color = '#000';
+        rankingTable.style.backgroundColor = '#fff';
+        
+        // 테이블 헤더와 셀 스타일 설정
+        const allCells = rankingTable.querySelectorAll('th, td');
+        allCells.forEach(cell => {
+            cell.style.padding = '8px';
+            cell.style.border = '1px solid #ddd';
+            cell.style.textAlign = 'center';
+        });
+        
+        // 테이블 헤더 스타일 설정
+        const headers = rankingTable.querySelectorAll('th');
+        headers.forEach(header => {
+            header.style.backgroundColor = '#4a90e2';
+            header.style.color = 'white';
+            header.style.fontWeight = 'bold';
+        });
+    }
     
     updateRankingDisplay();
 }
@@ -758,7 +785,7 @@ function displayRankings(rankings) {
     // 점수 없을 때 처리
     if (rankings.length === 0) {
         const row = document.createElement('tr');
-        row.innerHTML = '<td colspan="5">점수가 없습니다.</td>';
+        row.innerHTML = '<td colspan="5" style="color: #333; padding: 15px; text-align: center;">점수가 없습니다.</td>';
         rankingTableBody.appendChild(row);
         return;
     }
@@ -774,14 +801,19 @@ function displayRankings(rankings) {
         
         if (isCurrentPlayer) {
             row.className = 'highlight';
+            row.style.backgroundColor = '#e6f7ff';
+            row.style.fontWeight = 'bold';
+        } else {
+            // 홀짝 행 배경색 다르게 설정
+            row.style.backgroundColor = index % 2 === 0 ? '#f9f9f9' : '#ffffff';
         }
         
         row.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${score.name}</td>
-            <td>${score.time}</td>
-            <td>${score.mistakes}</td>
-            <td>${score.date}</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">${index + 1}</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">${score.name}</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">${score.time}</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">${score.mistakes}</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">${score.date}</td>
         `;
         
         rankingTableBody.appendChild(row);
