@@ -829,4 +829,88 @@ button:hover {
     .number-item[data-format="korean"] {
         font-size: 1rem;
     }
+}
+
+/* 토스트 메시지 스타일 */
+.toast-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.toast-success {
+    background-color: rgba(52, 168, 83, 0.9);
+}
+
+.toast-hide {
+    opacity: 0;
+}
+
+/* 온라인/로컬 랭킹 모드 토글 버튼 */
+.ranking-mode-toggle {
+    background-color: var(--tertiary-color);
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    margin: 0 auto 15px;
+    display: block;
+}
+
+/* 랭킹 로딩 상태 표시 */
+.ranking-loading {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-style: italic;
+}
+
+/* 온라인 랭킹 표시기 */
+.ranking-status {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.online-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.online-indicator.online {
+    background-color: var(--success-color);
+}
+
+.online-indicator.offline {
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 480px) {
+    .toast-message {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+        bottom: 15px;
+    }
+    
+    .ranking-mode-toggle {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+    }
 } 

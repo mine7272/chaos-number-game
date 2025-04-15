@@ -56,6 +56,10 @@ let numberElements = [];
 let mistakes = 0; // 실수 횟수 추적
 let maxNumber = 30; // 기본 난이도(보통)
 
+// 랭킹 시스템 관련 변수
+let isOnlineRankingEnabled = true; // 온라인 랭킹 기능 활성화 여부
+let currentRankingMode = 'online'; // online 또는 local
+
 // DOM 요소들
 const startButton = document.getElementById('start-button');
 const pauseButton = document.getElementById('pause-button');
@@ -371,7 +375,7 @@ function resetGame() {
     currentTarget = 1;
     currentNumberElement.textContent = currentTarget;
     
-    // 게임 활성화 클래스 제거
+    // 게임 휼성화 클래스 제거
     document.body.classList.remove('game-active');
     
     // 게임 컨트롤 버튼 설정
@@ -644,6 +648,116 @@ gameBoard.addEventListener('touchmove', function(e) {
 
 // ===== 랭킹 시스템 처리 =====
 
+// 랭킹 화면 처리 함수
+function showRanking() {
+    // 난이도에 따른 랭킹 키 설정
+    const difficultyKey = getDifficultyKey();
+    rankingDifficultySelect.value = difficultyKey.split('_')[1];
+    
+    // 랭킹 모드 토글 버튼 추가
+    if (!document.getElementById('ranking-mode-toggle')) {
+        const toggleButton = document.createElement('button');
+        toggleButton.id = 'ranking-mode-toggle';
+        toggleButton.className = 'ranking-mode-toggle';
+        toggleButton.textContent = currentRankingMode === 'online' ? '로컬 랭킹 보기' : '온라인 랭킹 보기';
+        toggleButton.addEventListener('click', toggleRankingMode);
+        
+        const rankingHeader = document.querySelector('.ranking-title');
+        rankingHeader.parentNode.insertBefore(toggleButton, rankingHeader.nextSibling);
+    } else {
+        document.getElementById('ranking-mode-toggle').textContent = 
+            currentRankingMode === 'online' ? '로컬 랭킹 보기' : '온라인 랭킹 보기';
+    }
+    
+    // 랭킹 화면 표시
+    rankingScreen.classList.remove('hidden');
+    
+    // 랭킹 데이터 업데이트
+    updateRankingDisplay();
+}
+
+// 랭킹 모드 전환
+function toggleRankingMode() {
+    currentRankingMode = currentRankingMode === 'online' ? 'local' : 'online';
+    const toggleButton = document.getElementById('ranking-mode-toggle');
+    if (toggleButton) {
+        toggleButton.textContent = currentRankingMode === 'online' ? '로컬 랭킹 보기' : '온라인 랭킹 보기';
+    }
+    updateRankingDisplay();
+}
+
+// 랭킹 화면에서 보이지 않기
+function hideRanking() {
+    rankingScreen.classList.add('hidden');
+}
+
+// 랭킹 시스템 이벤트 처리
+function updateRankingDisplay() {
+    // 난이도 선택 값 가져오기
+    const difficultyValue = rankingDifficultySelect.value;
+    const difficultyKey = `rankings_${difficultyValue}`;
+    
+    // 로딩 인디케이터 표시
+    rankingTableBody.innerHTML = '<tr><td colspan="5">랭킹 로딩 중...</td></tr>';
+    
+    if (currentRankingMode === 'online' && isOnlineRankingEnabled) {
+        // 온라인 랭킹 표시
+        loadOnlineRankings(difficultyValue)
+            .then(rankings => {
+                displayRankings(rankings);
+            })
+            .catch(error => {
+                console.error("온라인 랭킹 로드 오류:", error);
+                // 온라인 랭킹 로드 실패 시 로컬 랭킹으로 폴백
+                currentRankingMode = 'local';
+                document.getElementById('ranking-mode-toggle').textContent = '온라인 랭킹 보기';
+                updateRankingDisplay();
+            });
+    } else {
+        // 로컬 랭킹 표시
+        const localRankings = JSON.parse(localStorage.getItem(difficultyKey)) || [];
+        displayRankings(localRankings);
+    }
+}
+
+// 랭킹 데이터 표시
+function displayRankings(rankings) {
+    // 랭킹 테이블 초기화
+    rankingTableBody.innerHTML = '';
+    
+    // 점수 없을 때 처리
+    if (rankings.length === 0) {
+        const row = document.createElement('tr');
+        row.innerHTML = '<td colspan="5">점수가 없습니다.</td>';
+        rankingTableBody.appendChild(row);
+        return;
+    }
+    
+    // 랭킹 시스템 점수 표시
+    rankings.forEach((score, index) => {
+        const row = document.createElement('tr');
+        
+        // 현재 플레이어 확인
+        const isCurrentPlayer = currentRankingMode === 'local' && 
+                              score.name === playerNameInput.value && 
+                              score.time === finalTimeElement.textContent;
+        
+        if (isCurrentPlayer) {
+            row.className = 'highlight';
+        }
+        
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${score.name}</td>
+            <td>${score.time}</td>
+            <td>${score.mistakes}</td>
+            <td>${score.date}</td>
+        `;
+        
+        rankingTableBody.appendChild(row);
+    });
+}
+
 // 점수 저장 함수
 function saveScore() {
     const playerName = playerNameInput.value.trim();
@@ -661,27 +775,34 @@ function saveScore() {
     // 새로운 점수 생성
     const newScore = {
         name: playerName,
-        time: timerElement.textContent,
-        timeValue: getTimeValueInMilliseconds(timerElement.textContent),
+        time: finalTimeElement.textContent,
+        timeValue: getTimeValueInMilliseconds(finalTimeElement.textContent),
         mistakes: mistakes,
         date: new Date().toLocaleDateString(),
-        difficulty: maxNumber
+        difficulty: getDifficultyValue()
     };
     
-    // 난이도에 따른 점수 저장
-    let rankings = JSON.parse(localStorage.getItem(difficultyKey)) || [];
+    // 로컬 저장소에 점수 저장
+    let localRankings = JSON.parse(localStorage.getItem(difficultyKey)) || [];
+    localRankings.push(newScore);
+    localRankings.sort((a, b) => a.timeValue - b.timeValue);
+    localRankings = localRankings.slice(0, 10);
+    localStorage.setItem(difficultyKey, JSON.stringify(localRankings));
     
-    // 새로운 점수 추가
-    rankings.push(newScore);
-    
-    // 점수 정렬
-    rankings.sort((a, b) => a.timeValue - b.timeValue);
-    
-    // 상위 10개 점수 선택
-    rankings = rankings.slice(0, 10);
-    
-    // 점수 저장
-    localStorage.setItem(difficultyKey, JSON.stringify(rankings));
+    // 온라인 랭킹에 점수 저장
+    if (isOnlineRankingEnabled) {
+        saveOnlineScore(newScore)
+            .then(() => {
+                console.log("온라인 랭킹에 점수가 저장되었습니다.");
+                showSaveSuccessMessage("온라인 랭킹에 점수가 저장되었습니다!");
+            })
+            .catch(error => {
+                console.error("온라인 랭킹 저장 오류:", error);
+                showSaveSuccessMessage("로컬에만 점수가 저장되었습니다.");
+            });
+    } else {
+        showSaveSuccessMessage("로컬에 점수가 저장되었습니다!");
+    }
     
     // 랭킹 화면 초기화
     saveScoreButton.disabled = true;
@@ -693,65 +814,29 @@ function saveScore() {
     }
 }
 
-// 랭킹 화면 처리 함수
-function showRanking() {
-    // 랭킹 시스템 점수 표시
-    const difficultyKey = getDifficultyKey();
-    rankingDifficultySelect.value = difficultyKey.split('_')[1];
+// 저장 성공 메시지 표시
+function showSaveSuccessMessage(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-message toast-success';
+    toast.textContent = message;
+    document.body.appendChild(toast);
     
-    // 랭킹 시스템 이벤트 처리
-    updateRankingDisplay();
-    
-    // 랭킹 화면 보이기
-    rankingScreen.classList.remove('hidden');
+    // 3초 후 메시지 제거
+    setTimeout(() => {
+        toast.classList.add('toast-hide');
+        setTimeout(() => toast.remove(), 500);
+    }, 3000);
 }
 
-// 랭킹 화면에서 보이지 않기
-function hideRanking() {
-    rankingScreen.classList.add('hidden');
-}
-
-// 랭킹 시스템 이벤트 처리
-function updateRankingDisplay() {
-    // 랭킹 시스템 점수 표시
-    const difficultyValue = rankingDifficultySelect.value;
-    const difficultyKey = `rankings_${difficultyValue}`;
-    
-    // 난이도에 따른 점수 저장
-    const rankings = JSON.parse(localStorage.getItem(difficultyKey)) || [];
-    
-    // 랭킹 테이블 초기화
-    rankingTableBody.innerHTML = '';
-    
-    // 점수 없을 때 처리
-    if (rankings.length === 0) {
-        const row = document.createElement('tr');
-        row.innerHTML = '<td colspan="5">점수가 없습니다.</td>';
-        rankingTableBody.appendChild(row);
-        return;
+// 난이도 값 반환 함수
+function getDifficultyValue() {
+    if (maxNumber <= 20) {
+        return 'easy';
+    } else if (maxNumber <= 30) {
+        return 'normal';
+    } else {
+        return 'hard';
     }
-    
-    // 랭킹 시스템 점수 표시
-    rankings.forEach((score, index) => {
-        const row = document.createElement('tr');
-        
-        // 현재 플레이어 확인
-        const isCurrentPlayer = score.name === playerNameInput.value && 
-                              score.time === finalTimeElement.textContent;
-        if (isCurrentPlayer) {
-            row.className = 'highlight';
-        }
-        
-        row.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${score.name}</td>
-            <td>${score.time}</td>
-            <td>${score.mistakes}</td>
-            <td>${score.date}</td>
-        `;
-        
-        rankingTableBody.appendChild(row);
-    });
 }
 
 // 난이도에 따른 점수 저장 키 반환 함수
