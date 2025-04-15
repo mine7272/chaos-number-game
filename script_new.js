@@ -470,7 +470,7 @@ function generateNumbers() {
     });
 }
 
-// 諛곗뿴 臾댁옉??泥섎━
+// 배열 무작위 처리
 function shuffleArray(array) {
     const newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
