@@ -56,7 +56,7 @@ let numberElements = [];
 let mistakes = 0; // 실수 횟수 추적
 let maxNumber = 30; // 기본 난이도(보통)
 
-// DOM ?붿냼??
+// DOM 요소들
 const startButton = document.getElementById('start-button');
 const pauseButton = document.getElementById('pause-button');
 const resumeButton = document.getElementById('resume-button');
@@ -71,7 +71,7 @@ const normalButton = document.getElementById('normal-button');
 const hardButton = document.getElementById('hard-button');
 const difficultyContainer = document.getElementById('difficulty-container');
 
-// ??궧 ?쒖뒪???붿냼??
+// 랭킹 시스템 요소들
 const playerNameInput = document.getElementById('player-name');
 const saveScoreButton = document.getElementById('save-score-button');
 const showRankingButton = document.getElementById('show-ranking-button');
@@ -80,74 +80,74 @@ const rankingTableBody = document.getElementById('ranking-table-body');
 const closeRankingButton = document.getElementById('close-ranking-button');
 const rankingDifficultySelect = document.getElementById('ranking-difficulty');
 
-// ?명듃濡??붾㈃ ?붿냼??
+// 인트로 화면 요소들
 const introScreen = document.getElementById('intro-screen');
 const startGameButton = document.getElementById('start-game-button');
 const easyButtonIntro = document.getElementById('easy-button-intro');
 const normalButtonIntro = document.getElementById('normal-button-intro');
 const hardButtonIntro = document.getElementById('hard-button-intro');
 
-// 留덉?留??덈룄???ш린 ???
+// 마지막 윈도우 크기 저장
 let lastWindowWidth = window.innerWidth;
 let lastWindowHeight = window.innerHeight;
-const RESIZE_THRESHOLD = 50; // ?ш린 蹂??臾댁떆 ?꾧퀎媛?(px)
+const RESIZE_THRESHOLD = 50; // 크기 변경 무시 임계값(px)
 
-// ?대깽??由ъ뒪???ㅼ젙
+// 이벤트 리스너 설정
 document.addEventListener('DOMContentLoaded', () => {
     gameBoard = document.getElementById('game-board');
     
-    // 珥덇린???⑥닔 ?몄텧
+    // 초기화 함수 호출
     initGame();
     
-    // ?명듃濡??붾㈃ ?대깽???ㅼ젙
+    // 인트로 화면 이벤트 설정
     startGameButton.addEventListener('click', startFromIntro);
     easyButtonIntro.addEventListener('click', () => setDifficultyIntro('easy'));
     normalButtonIntro.addEventListener('click', () => setDifficultyIntro('normal'));
     hardButtonIntro.addEventListener('click', () => setDifficultyIntro('hard'));
     
-    // 寃뚯엫 而⑦듃濡?踰꾪듉 ?대깽???ㅼ젙
+    // 게임 컨트롤 버튼 이벤트 설정
     startButton.addEventListener('click', startGame);
     pauseButton.addEventListener('click', pauseGame);
     resumeButton.addEventListener('click', resumeGame);
     restartButton.addEventListener('click', confirmResetGame);
     playAgainButton.addEventListener('click', resetGame);
     
-    // ?쒖씠??踰꾪듉 ?대깽???ㅼ젙 (寃뚯엫 ?붾㈃?먯꽌)
+    // 난이도 버튼 이벤트 설정 (게임 화면에서)
     easyButton.addEventListener('click', () => setDifficulty('easy'));
     normalButton.addEventListener('click', () => setDifficulty('normal'));
     hardButton.addEventListener('click', () => setDifficulty('hard'));
     
-    // ??궧 ?쒖뒪???대깽???ㅼ젙
+    // 랭킹 시스템 이벤트 설정
     saveScoreButton.addEventListener('click', saveScore);
     showRankingButton.addEventListener('click', showRanking);
     closeRankingButton.addEventListener('click', hideRanking);
     rankingDifficultySelect.addEventListener('change', updateRankingDisplay);
     
-    // 寃뚯엫 蹂대뱶???대깽???꾩엫 ?ㅼ젙
+    // 게임 보드에 이벤트 다임 설정
     gameBoard.addEventListener('click', handleNumberClick);
 });
 
-// 寃뚯엫 珥덇린???⑥닔
+// 게임 초기화 함수
 function initGame() {
-    // 寃뚯엫 湲곕낯 ?ㅼ젙 - 湲곕낯 UI ?ㅼ젙
+    // 게임 기본 설정 - 기본 UI 설정
     hideGameElements();
     showIntroScreen();
     
-    // 寃곌낵 ?붾㈃ 媛뺤젣 珥덇린??
+    // 결과 화면 강제 초기화
     resultScreen.classList.add('hidden');
     resultScreen.style.display = 'none';
     
-    // 寃뚯엫 ?곹깭 珥덇린??
+    // 게임 상태 초기화
     gameActive = false;
     gamePaused = false;
     currentTarget = 1;
     mistakes = 0;
     
-    // ??대㉧ 珥덇린??
+    // 타이머 초기화
     resetTimer();
 }
 
-// 寃뚯엫 ?붾㈃?먯꽌 蹂댁씠吏 ?딅뒗 ?붿냼??
+// 게임 화면에서 보이지 않는 요소들
 function hideGameElements() {
     gameBoard.style.visibility = 'hidden';
     document.querySelector('.game-header').style.visibility = 'hidden';
@@ -158,7 +158,7 @@ function hideGameElements() {
     difficultyContainer.style.display = 'none';
 }
 
-// 寃뚯엫 ?붾㈃?먯꽌 蹂댁씠???붿냼??
+// 게임 화면에서 보이는 요소들
 function showGameElements() {
     gameBoard.style.visibility = 'visible';
     gameBoard.classList.remove('hidden');
@@ -178,14 +178,14 @@ function hideIntroScreen() {
     introScreen.classList.add('hidden');
 }
 
-// ?명듃濡??붾㈃?먯꽌 ?쒖씠???좏깮 泥섎━
+// 인트로 화면에서 난이도 선택 처리
 function setDifficultyIntro(level) {
-    // 紐⑤뱺 ?쒖씠??踰꾪듉 鍮꾪솢?깊솕
+    // 모든 난이도 버튼 비활성화
     easyButtonIntro.classList.remove('active');
     normalButtonIntro.classList.remove('active');
     hardButtonIntro.classList.remove('active');
     
-    // ?좏깮???쒖씠?꾩뿉 ?곕씪 maxNumber ?ㅼ젙 諛??쒖꽦??踰꾪듉 ?ㅼ젙
+    // 선택된 난이도에 따라 maxNumber 설정 및 활성화 버튼 설정
     switch(level) {
         case 'easy':
             maxNumber = 20;
@@ -204,11 +204,11 @@ function setDifficultyIntro(level) {
             normalButtonIntro.classList.add('active');
     }
     
-    // 寃뚯엫 ?붾㈃???쒖씠??踰꾪듉 ?ㅼ젙
+    // 게임 화면의 난이도 버튼 설정
     syncDifficultyButtons(level);
 }
 
-// 寃뚯엫 ?붾㈃???쒖씠??踰꾪듉 ?ㅼ젙
+// 게임 화면의 난이도 버튼 설정
 function syncDifficultyButtons(level) {
     easyButton.classList.remove('active');
     normalButton.classList.remove('active');
@@ -227,31 +227,31 @@ function syncDifficultyButtons(level) {
     }
 }
 
-// ?명듃濡??붾㈃?먯꽌 寃뚯엫 ?쒖옉
+// 인트로 화면에서 게임 시작
 function startFromIntro() {
     hideIntroScreen();
     
-    // 寃뚯엫 蹂대뱶?먯꽌 蹂댁씠吏 ?딅뒗 ?붿냼???쒓굅
+    // 게임 보드에서 보이지 않는 요소들 제거
     gameBoard.classList.remove('hidden');
     gameBoard.style.visibility = 'visible';
     gameBoard.style.display = 'block';
     
     showGameElements();
     
-    // 鍮좊Ⅸ 寃뚯엫 ?쒖옉???꾪븳 ?꾩떆 泥섎━
+    // 빠른 게임 시작을 위한 임시 처리
     setTimeout(() => {
         startGame();
     }, 100);
 }
 
-// ?쒖씠???ㅼ젙 泥섎━
+// 난이도 설정 처리
 function setDifficulty(level) {
-    // 紐⑤뱺 ?쒖씠??踰꾪듉 鍮꾪솢?깊솕
+    // 모든 난이도 버튼 비활성화
     easyButton.classList.remove('active');
     normalButton.classList.remove('active');
     hardButton.classList.remove('active');
     
-    // ?좏깮???쒖씠?꾩뿉 ?곕씪 maxNumber ?ㅼ젙 諛??쒖꽦??踰꾪듉 ?ㅼ젙
+    // 선택된 난이도에 따라 maxNumber 설정 및 활성화 버튼 설정
     switch(level) {
         case 'easy':
             maxNumber = 20;
@@ -312,7 +312,7 @@ function startGame() {
     console.log("게임 시작됨, 난이도:", maxNumber);
 }
 
-// 寃뚯엫 ?쇱떆?뺤? 泥섎━
+// 게임 일시정지 처리
 function pauseGame() {
     if (!gameActive || gamePaused) return;
     
@@ -320,49 +320,49 @@ function pauseGame() {
     pauseStartTime = new Date();
     stopTimer();
     
-    // 踰꾪듉 鍮꾪솢?깊솕
+    // 버튼 비활성화
     pauseButton.classList.add('hidden');
     resumeButton.classList.remove('hidden');
     
-    // 寃뚯엫 蹂대뱶?먯꽌 蹂댁씠吏 ?딅뒗 ?붿냼??異붽?
+    // 게임 보드에서 보이지 않는 요소들 추가
     const pauseOverlay = document.createElement('div');
     pauseOverlay.className = 'pause-overlay';
-    pauseOverlay.innerHTML = '<div class="pause-message">寃뚯엫???쇱떆?뺤??섏떆寃좎뒿?덇퉴?</div>';
+    pauseOverlay.innerHTML = '<div class="pause-message">게임이 일시정지 되었습니다</div>';
     gameBoard.appendChild(pauseOverlay);
 }
 
-// 寃뚯엫 ?ъ떆??泥섎━
+// 게임 재시작 처리
 function resumeGame() {
     if (!gameActive || !gamePaused) return;
     
-    // ?쇱떆?뺤? ?쒓컙 怨꾩궛
+    // 일시정지 시간 계산
     const now = new Date();
     totalPausedTime += now - pauseStartTime;
     
     gamePaused = false;
     
-    // 踰꾪듉 鍮꾪솢?깊솕
+    // 버튼 비활성화
     resumeButton.classList.add('hidden');
     pauseButton.classList.remove('hidden');
     
-    // 寃뚯엫 蹂대뱶?먯꽌 蹂댁씠吏 ?딅뒗 ?붿냼???쒓굅
+    // 게임 보드에서 보이지 않는 요소들 제거
     const pauseOverlay = document.querySelector('.pause-overlay');
     if (pauseOverlay) {
         pauseOverlay.remove();
     }
     
-    // ??대㉧ ?ъ떆??
+    // 타이머 재시작
     startTimer();
 }
 
-// 寃뚯엫 ?ъ떆???뺤씤
+// 게임 재시작 확인
 function confirmResetGame() {
-    if (confirm('留먮줈 寃뚯엫??珥덇린?뷀븯?쒓쿋?듬땲源?')) {
+    if (confirm('정말로 게임을 초기화하시겠습니까?')) {
         resetGame();
     }
 }
 
-// 寃뚯엫 蹂대뱶 珥덇린??
+// 게임 보드 초기화
 function resetGame() {
     stopTimer();
     resultScreen.classList.add('hidden');
@@ -371,26 +371,26 @@ function resetGame() {
     currentTarget = 1;
     currentNumberElement.textContent = currentTarget;
     
-    // 寃뚯엫 ?쒖꽦???대옒???쒓굅
+    // 게임 활성화 클래스 제거
     document.body.classList.remove('game-active');
     
-    // 寃뚯엫 而⑦듃濡?踰꾪듉 ?ㅼ젙
+    // 게임 컨트롤 버튼 설정
     startButton.classList.remove('hidden');
     difficultyContainer.classList.remove('hidden');
     pauseButton.classList.add('hidden');
     resumeButton.classList.add('hidden');
     restartButton.classList.add('hidden');
     
-    // ??궧 ?쒖뒪???먯닔 珥덇린??
+    // 랭킹 시스템 점수 초기화
     saveScoreButton.disabled = false;
-    saveScoreButton.textContent = '?먯닔 ???;
+    saveScoreButton.textContent = '점수 저장';
     rankingScreen.classList.add('hidden');
     
-    // 寃뚯엫 蹂대뱶 珥덇린??
+    // 게임 보드 초기화
     clearGameBoard();
 }
 
-// 寃뚯엫 蹂대뱶 珥덇린??
+// 게임 보드 초기화
 function clearGameBoard() {
     gameBoard.innerHTML = '';
     numberElements = [];
@@ -480,37 +480,37 @@ function shuffleArray(array) {
     return newArray;
 }
 
-// 寃뚯엫 蹂대뱶?먯꽌 ?レ옄 泥섎━
+// 게임 보드에서 숫자 처리
 function handleNumberClick(event) {
     if (!gameActive || gamePaused) return;
     
     const element = event.target;
     
-    // 洹몃━湲??뺤씤
+    // 그리드 확인
     if (element.classList.contains('number-item')) {
         const value = parseInt(element.dataset.value);
         
-        // 紐⑺몴 ?レ옄? 鍮꾧탳?섏뿬 泥섎━
+        // 목표 숫자와 비교하여 처리
         if (value === currentTarget) {
-            // ?뺣떟 泥섎━
+            // 정답 처리
             element.classList.add('correct');
             playCorrectSound();
             
-            // 紐⑺몴 ?レ옄 ?ㅼ쓬?쇰줈 ?대룞
+            // 목표 숫자 다음으로 이동
             currentTarget++;
             currentNumberElement.textContent = currentTarget;
             
-            // 紐⑤뱺 ?レ옄 李얠븯?붿? ?뺤씤
+            // 모든 숫자 찾았는지 확인
             if (currentTarget > maxNumber) {
                 gameComplete();
             }
         } else {
-            // ?ㅻ떟 寃쎌슦 ?뺣떟 泥섎━
+            // 오답 경우 오류 처리
             mistakes++;
             element.classList.add('wrong');
             playWrongSound();
             
-            // ?뺣떟 泥섎━ ???ㅻ떟 ?쒓굅
+            // 오류 처리 후 오답 제거
             setTimeout(() => {
                 element.classList.remove('wrong');
             }, 300);
@@ -518,9 +518,9 @@ function handleNumberClick(event) {
     }
 }
 
-// ?뺣떟??泥섎━
+// 정답음 처리
 function playCorrectSound() {
-    // 媛꾨떒???뺣떟??泥섎━ (媛꾨떒???ㅻ뵒??API ?ъ슜)
+    // 간단한 정답음 처리 (간단한 오디오 API 사용)
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const oscillator = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
@@ -537,7 +537,7 @@ function playCorrectSound() {
 }
 
 function playWrongSound() {
-    // 媛꾨떒???ㅻ떟??泥섎━ (媛꾨떒???ㅻ뵒??API ?ъ슜)
+    // 간단한 오답음 처리 (간단한 오디오 API 사용)
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const oscillator = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
@@ -553,35 +553,35 @@ function playWrongSound() {
     oscillator.stop(audioContext.currentTime + 0.15);
 }
 
-// 寃뚯엫 醫낅즺 泥섎━
+// 게임 종료 처리
 function gameComplete() {
     gameActive = false;
     stopTimer();
     
-    // 寃뚯엫 ?쒖꽦???대옒???쒓굅
+    // 게임 활성화 클래스 제거
     document.body.classList.remove('game-active');
     
-    // 醫낅즺 ?쒓컙 ?쒖떆
+    // 종료 시간 표시
     finalTimeElement.textContent = timerElement.textContent;
     
-    // ?ㅼ닔 ?잛닔 ?쒖떆
+    // 실수 횟수 표시
     const mistakesElement = document.getElementById('mistakes-count');
     if (mistakesElement) {
         mistakesElement.textContent = mistakes;
     }
     
-    // ??λ맂 ?대쫫 ?쒖떆
+    // 저장된 이름 표시
     const savedName = localStorage.getItem('playerName');
     if (savedName) {
         playerNameInput.value = savedName;
     }
     
-    // 醫낅즺 ?쒓컙 ?쒖떆 - ?④꺼吏??붿냼 異붽?
+    // 종료 시간 표시 - 관련된 요소 추가
     resultScreen.classList.remove('hidden');
     resultScreen.style.display = 'flex';
 }
 
-// ??대㉧ 泥섎━
+// 타이머 처리
 function startTimer() {
     if (!startTime) {
         startTime = new Date();
@@ -611,54 +611,54 @@ function updateTimer() {
     timerElement.textContent = `${minutes}:${seconds}:${milliseconds}`;
 }
 
-// ?ш린 蹂??泥섎━ (寃뚯엫 ?쒖꽦?????ш린 蹂??臾댁떆 泥섎━)
+// 크기 변경 처리 (게임 활성화시 크기 변경 무시 처리)
 window.addEventListener('resize', () => {
-    // 寃뚯엫 ?쒖꽦?????ш린 蹂???꾧퀎媛?泥섎━
+    // 게임 활성화시의 크기 변경 임계값 처리
     if (gameActive) {
-        // ?ш린 蹂???꾧퀎媛?泥섎━
+        // 크기 변경 임계값 처리
         const widthChange = Math.abs(window.innerWidth - lastWindowWidth);
         const heightChange = Math.abs(window.innerHeight - lastWindowHeight);
         
         if (widthChange > RESIZE_THRESHOLD || heightChange > RESIZE_THRESHOLD) {
-            // 寃뚯엫 蹂대뱶 ?ш린 珥덇린??
+            // 게임 보드 크기 초기화
             lastWindowWidth = window.innerWidth;
             lastWindowHeight = window.innerHeight;
             
-            // 寃뚯엫 蹂대뱶 珥덇린??
+            // 게임 보드 초기화
             clearGameBoard();
             generateNumbers();
         }
     } else {
-        // 寃뚯엫 ?쒖꽦?????ш린 蹂???놁쓣 ???ш린 珥덇린??
+        // 게임 활성화되지 않은 크기 변경 없을 때 크기 초기화
         lastWindowWidth = window.innerWidth;
         lastWindowHeight = window.innerHeight;
     }
 });
 
-// ?곗튂 ?대깽??泥섎━ (寃뚯엫 ?쒖꽦?????곗튂 臾댁떆 泥섎━)
+// 터치 이벤트 처리 (게임 활성화시 터치 무시 처리)
 gameBoard.addEventListener('touchmove', function(e) {
     if (gameActive) {
         e.preventDefault();
     }
 }, { passive: false });
 
-// ===== ??궧 ?쒖뒪??泥섎━ =====
+// ===== 랭킹 시스템 처리 =====
 
-// ?먯닔 ????⑥닔
+// 점수 저장 함수
 function saveScore() {
     const playerName = playerNameInput.value.trim();
     if (!playerName) {
-        alert('?대쫫???낅젰?섏꽭??');
+        alert('이름을 입력하세요');
         return;
     }
     
-    // ??λ맂 ?대쫫 ???
+    // 저장된 이름 저장
     localStorage.setItem('playerName', playerName);
     
-    // ?쒖씠?꾩뿉 ?곕Ⅸ ?먯닔 ???
+    // 난이도에 따른 점수 저장
     const difficultyKey = getDifficultyKey();
     
-    // ?덈줈???먯닔 ?앹꽦
+    // 새로운 점수 생성
     const newScore = {
         name: playerName,
         time: timerElement.textContent,
@@ -668,74 +668,74 @@ function saveScore() {
         difficulty: maxNumber
     };
     
-    // ?쒖씠?꾩뿉 ?곕Ⅸ ?먯닔 ???
+    // 난이도에 따른 점수 저장
     let rankings = JSON.parse(localStorage.getItem(difficultyKey)) || [];
     
-    // ?덈줈???먯닔 異붽?
+    // 새로운 점수 추가
     rankings.push(newScore);
     
-    // ?먯닔 ?뺣젹
+    // 점수 정렬
     rankings.sort((a, b) => a.timeValue - b.timeValue);
     
-    // ?곸쐞 10媛??먯닔 ?좏깮
+    // 상위 10개 점수 선택
     rankings = rankings.slice(0, 10);
     
-    // ?먯닔 ???
+    // 점수 저장
     localStorage.setItem(difficultyKey, JSON.stringify(rankings));
     
-    // ??궧 ?붾㈃ 珥덇린??
+    // 랭킹 화면 초기화
     saveScoreButton.disabled = true;
-    saveScoreButton.textContent = '??λ릺?덉뒿?덈떎!';
+    saveScoreButton.textContent = '저장되었습니다!';
     
-    // ??궧 ?쒖뒪???대깽??泥섎━ (??궧 ?붾㈃?먯꽌 ?먯닔 ?쒖떆)
+    // 랭킹 시스템 이벤트 처리 (랭킹 화면에서 점수 표시)
     if (!rankingScreen.classList.contains('hidden')) {
         updateRankingDisplay();
     }
 }
 
-// ??궧 ?붾㈃ 泥섎━ ?⑥닔
+// 랭킹 화면 처리 함수
 function showRanking() {
-    // ??궧 ?쒖뒪???먯닔 ?쒖떆
+    // 랭킹 시스템 점수 표시
     const difficultyKey = getDifficultyKey();
     rankingDifficultySelect.value = difficultyKey.split('_')[1];
     
-    // ??궧 ?쒖뒪???대깽??泥섎━
+    // 랭킹 시스템 이벤트 처리
     updateRankingDisplay();
     
-    // ??궧 ?붾㈃ 蹂댁씠湲?
+    // 랭킹 화면 보이기
     rankingScreen.classList.remove('hidden');
 }
 
-// ??궧 ?붾㈃?먯꽌 蹂댁씠吏 ?딄린
+// 랭킹 화면에서 보이지 않기
 function hideRanking() {
     rankingScreen.classList.add('hidden');
 }
 
-// ??궧 ?쒖뒪???대깽??泥섎━
+// 랭킹 시스템 이벤트 처리
 function updateRankingDisplay() {
-    // ??궧 ?쒖뒪???먯닔 ?쒖떆
+    // 랭킹 시스템 점수 표시
     const difficultyValue = rankingDifficultySelect.value;
     const difficultyKey = `rankings_${difficultyValue}`;
     
-    // ?쒖씠?꾩뿉 ?곕Ⅸ ?먯닔 ???
+    // 난이도에 따른 점수 저장
     const rankings = JSON.parse(localStorage.getItem(difficultyKey)) || [];
     
-    // ??궧 ?뚯씠釉?珥덇린??
+    // 랭킹 테이블 초기화
     rankingTableBody.innerHTML = '';
     
-    // ?먯닔 ?놁쓣 ??泥섎━
+    // 점수 없을 때 처리
     if (rankings.length === 0) {
         const row = document.createElement('tr');
-        row.innerHTML = '<td colspan="5">?먯닔媛 ?놁뒿?덈떎.</td>';
+        row.innerHTML = '<td colspan="5">점수가 없습니다.</td>';
         rankingTableBody.appendChild(row);
         return;
     }
     
-    // ??궧 ?쒖뒪???먯닔 ?쒖떆
+    // 랭킹 시스템 점수 표시
     rankings.forEach((score, index) => {
         const row = document.createElement('tr');
         
-        // ?꾩옱 ?뚮젅?댁뼱 ?뺤씤
+        // 현재 플레이어 확인
         const isCurrentPlayer = score.name === playerNameInput.value && 
                               score.time === finalTimeElement.textContent;
         if (isCurrentPlayer) {
@@ -754,7 +754,7 @@ function updateRankingDisplay() {
     });
 }
 
-// ?쒖씠?꾩뿉 ?곕Ⅸ ?먯닔 ?????諛섑솚 ?⑥닔
+// 난이도에 따른 점수 저장 키 반환 함수
 function getDifficultyKey() {
     let difficultyKey;
     
@@ -769,7 +769,7 @@ function getDifficultyKey() {
     return difficultyKey;
 }
 
-// ?쒓컙 臾몄옄?댁뿉??諛由ъ큹 媛?諛섑솚 ?⑥닔
+// 시간 문자열에서 밀리초 값 반환 함수
 function getTimeValueInMilliseconds(timeString) {
     const [minutes, seconds, milliseconds] = timeString.split(':').map(Number);
     return (minutes * 60 * 1000) + (seconds * 1000) + (milliseconds * 10);
