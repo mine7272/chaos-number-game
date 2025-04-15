@@ -109,9 +109,6 @@ h1 {
 }
 
 .number-item {
-    position: absolute;
-    width: 60px;
-    height: 60px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -122,13 +119,14 @@ h1 {
     transition: transform 0.2s, opacity 0.2s;
     font-weight: bold;
     font-size: 1rem;
-    z-index: 10;
     border: 2px solid #ccc;
     word-break: break-word;
     text-align: center;
     padding: 3px;
     overflow: hidden;
     line-height: 1.1;
+    min-height: 60px;
+    aspect-ratio: 1;
 }
 
 .number-item:hover {
@@ -137,6 +135,22 @@ h1 {
 
 .number-item:active {
     transform: scale(0.92);
+}
+
+.number-item[data-format="arabic"] {
+    font-size: 1.5rem;
+    background-color: #e1f5fe;
+}
+
+.number-item[data-format="english"] {
+    font-size: 0.9rem;
+    background-color: #e8f5e9;
+    line-height: 1.1;
+}
+
+.number-item[data-format="korean"] {
+    font-size: 1.2rem;
+    background-color: #fff3e0;
 }
 
 .correct {
@@ -284,9 +298,9 @@ button:hover {
 /* Mobile optimization */
 @media (max-width: 480px) {
     .number-item {
-        border-radius: 8px;
+        min-height: 65px;
         font-size: 0.85rem;
-        border-width: 1px;
+        padding: 1px;
     }
     
     h1 {
@@ -583,21 +597,27 @@ button:hover {
 
 /* 모바일 화면에서의 버튼 크기 조정 */
 @media (max-width: 768px) {
-    .number-button {
+    .number-item {
         min-height: 70px;
-        min-width: 70px;
-        font-size: 1rem;
-        padding: 3px;
+        font-size: 0.9rem;
+        padding: 2px;
+    }
+    
+    .number-item[data-format="english"] {
+        font-size: 0.8rem;
     }
 }
 
 /* 매우 작은 화면에서의 버튼 크기 조정 */
 @media (max-width: 480px) {
-    .number-button {
+    .number-item {
         min-height: 65px;
-        min-width: 65px;
-        font-size: 0.9rem;
-        padding: 2px;
+        font-size: 0.75rem;
+        padding: 1px;
+    }
+    
+    .number-item[data-format="english"] {
+        font-size: 0.75rem;
     }
 }
 
