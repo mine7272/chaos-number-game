@@ -118,7 +118,6 @@ h1 {
     cursor: pointer;
     transition: transform 0.2s, opacity 0.2s;
     font-weight: bold;
-    font-size: 1rem;
     border: 2px solid #ccc;
     word-break: break-word;
     text-align: center;
@@ -175,7 +174,11 @@ h1 {
 
 .game-controls {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .difficulty-selector {
@@ -191,15 +194,16 @@ h1 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 15px;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .difficulty-btn {
     background-color: #ccc;
     color: #333;
-    padding: 8px 12px;
-    font-size: 0.9rem;
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    min-width: 85px;
 }
 
 .difficulty-btn.active {
@@ -208,14 +212,16 @@ h1 {
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 10px 15px;
+    font-size: 0.95rem;
     background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin: 0 5px;
+    margin: 5px;
+    min-width: 90px;
+    white-space: nowrap;
 }
 
 button:hover {
@@ -250,13 +256,40 @@ button:hover {
 }
 
 .result-screen p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
-#final-time {
+.player-name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.player-name-container label {
+    margin-bottom: 5px;
     font-weight: bold;
-    color: var(--secondary-color);
+}
+
+.player-name-container input {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.player-name-container button {
+    margin-top: 5px;
+}
+
+/* 랭킹 관련 버튼 */
+.show-ranking-button, .close-ranking-button {
+    background-color: var(--tertiary-color);
+    margin-top: 10px;
 }
 
 /* Number format styles - Arabic, English, Korean */
@@ -312,12 +345,43 @@ button:hover {
     }
     
     button {
-        padding: 8px 15px;
-        font-size: 0.9rem;
+        padding: 7px 10px;
+        font-size: 0.8rem;
+        margin: 3px;
+        min-width: 70px;
     }
     
     .pause-message {
         font-size: 1.5rem;
+    }
+    
+    .result-screen {
+        padding: 15px;
+    }
+    
+    .result-screen h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .result-screen p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .player-name-container {
+        max-width: 250px;
+    }
+    
+    .player-name-container input {
+        padding: 6px;
+        font-size: 0.9rem;
+    }
+    
+    .ranking-list th, 
+    .ranking-list td {
+        padding: 6px 4px;
+        font-size: 0.75rem;
     }
 }
 
@@ -433,11 +497,10 @@ button:hover {
 }
 
 .start-game-button {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    margin-top: 15px;
     background-color: var(--success-color);
-    font-size: 1.2rem;
-    padding: 12px 30px;
-    transition: transform 0.2s;
-    margin-top: 20px;
 }
 
 .start-game-button:hover {
@@ -491,10 +554,8 @@ button:hover {
     }
     
     .start-game-button {
-        font-size: 1.1rem;
-        padding: 10px 25px;
-        margin-top: 15px;
-        margin-bottom: 30px;
+        font-size: 1rem;
+        padding: 10px 20px;
     }
 }
 
@@ -606,6 +667,23 @@ button:hover {
     .number-item[data-format="english"] {
         font-size: 0.8rem;
     }
+    
+    button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        margin: 4px;
+        min-width: 80px;
+    }
+    
+    .difficulty-btn {
+        font-size: 0.8rem;
+        padding: 7px 8px;
+        min-width: 75px;
+    }
+    
+    .game-controls {
+        gap: 8px;
+    }
 }
 
 /* 매우 작은 화면에서의 버튼 크기 조정 */
@@ -618,6 +696,33 @@ button:hover {
     
     .number-item[data-format="english"] {
         font-size: 0.75rem;
+    }
+    
+    button {
+        padding: 7px 10px;
+        font-size: 0.8rem;
+        margin: 3px;
+        min-width: 70px;
+    }
+    
+    .difficulty-btn {
+        font-size: 0.75rem;
+        padding: 6px 7px;
+        min-width: 65px;
+    }
+    
+    .start-game-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    
+    .game-controls {
+        margin-bottom: 15px;
+    }
+    
+    .difficulty-buttons {
+        gap: 6px;
+        margin-bottom: 15px;
     }
 }
 
@@ -638,5 +743,90 @@ button:hover {
 @media (max-width: 480px) {
     .number-button[data-format="english"] {
         font-size: 0.75rem;
+    }
+}
+
+#final-time {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* 게임판 숫자 항목 스타일 최적화 */
+.number-item {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--number-bg);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    font-weight: bold;
+    border: 2px solid #ccc;
+    word-break: break-word;
+    text-align: center;
+    padding: 3px;
+    overflow: hidden;
+    line-height: 1.1;
+    min-height: 60px;
+    aspect-ratio: 1;
+}
+
+/* 포맷별 스타일 */
+.number-item[data-format="arabic"] {
+    font-size: 1.5rem;
+    background-color: #e1f5fe;
+}
+
+.number-item[data-format="english"] {
+    font-size: 0.9rem;
+    background-color: #e8f5e9;
+    line-height: 1.1;
+}
+
+.number-item[data-format="korean"] {
+    font-size: 1.2rem;
+    background-color: #fff3e0;
+}
+
+/* 모바일 환경에서의 숫자 항목 스타일 */
+@media (max-width: 768px) {
+    .number-item {
+        min-height: 65px;
+        font-size: 0.95rem;
+        padding: 2px;
+    }
+    
+    .number-item[data-format="arabic"] {
+        font-size: 1.4rem;
+    }
+    
+    .number-item[data-format="english"] {
+        font-size: 0.85rem;
+    }
+    
+    .number-item[data-format="korean"] {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .number-item {
+        min-height: 55px;
+        font-size: 0.9rem;
+        padding: 1px;
+        border-width: 1px;
+    }
+    
+    .number-item[data-format="arabic"] {
+        font-size: 1.3rem;
+    }
+    
+    .number-item[data-format="english"] {
+        font-size: 0.75rem;
+    }
+    
+    .number-item[data-format="korean"] {
+        font-size: 1rem;
     }
 } 
