@@ -1,5 +1,6 @@
 ﻿// 랭킹 시스템 비활성화
 // 1부터 40까지의 숫자와 형식 데이터 구조
+const VERSION = "1.1.0"; // 버전 정보 추가
 const numbersData = [
     { value: 1, formats: ['1', 'one', '일'] },
     { value: 2, formats: ['2', 'two', '이'] },
@@ -54,7 +55,7 @@ let timerInterval;
 let gameBoard;
 let numberElements = [];
 let mistakes = 0; // 실수 횟수 추적
-let maxNumber = 30; // 기본 난이도(보통)
+let maxNumber = 20; // 기본 난이도를 쉬움(20)으로 설정
 
 // 랭킹 시스템 관련 변수
 let isOnlineRankingEnabled = true; // 온라인 랭킹 기능 활성화 여부
@@ -102,6 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 초기화 함수 호출
     initGame();
+    
+    // 버전 정보 표시
+    displayVersion();
     
     // 기본 난이도를 '쉬움'으로 설정
     setDifficultyIntro('easy');
@@ -211,8 +215,8 @@ function setDifficultyIntro(level) {
             hardButtonIntro.classList.add('active');
             break;
         default:
-            maxNumber = 30;
-            normalButtonIntro.classList.add('active');
+            maxNumber = 20; // 기본 난이도 쉬움으로 변경
+            easyButtonIntro.classList.add('active');
     }
     
     // 게임 화면의 난이도 버튼 설정
@@ -249,6 +253,12 @@ function startFromIntro() {
     
     showGameElements();
     
+    // 게임 시작 전에 난이도 다시 확인
+    if (maxNumber !== 20 && maxNumber !== 30 && maxNumber !== 40) {
+        maxNumber = 20; // 기본값을 쉬움으로 강제 설정
+        setDifficulty('easy');
+    }
+    
     // 빠른 게임 시작을 위한 임시 처리
     setTimeout(() => {
         startGame();
@@ -277,8 +287,8 @@ function setDifficulty(level) {
             hardButton.classList.add('active');
             break;
         default:
-            maxNumber = 30;
-            normalButton.classList.add('active');
+            maxNumber = 20; // 기본 난이도 쉬움으로 변경
+            easyButton.classList.add('active');
     }
 }
 
@@ -292,6 +302,12 @@ function startGame() {
     currentTarget = 1;
     mistakes = 0;
     currentNumberElement.textContent = currentTarget;
+    
+    // 난이도 확인 - 설정되지 않았으면 쉬움으로 설정
+    if (maxNumber !== 20 && maxNumber !== 30 && maxNumber !== 40) {
+        maxNumber = 20;
+        setDifficulty('easy');
+    }
     
     // 게임 보드 초기화
     clearGameBoard();
@@ -872,4 +888,21 @@ function getDifficultyKey() {
 function getTimeValueInMilliseconds(timeString) {
     const [minutes, seconds, milliseconds] = timeString.split(':').map(Number);
     return (minutes * 60 * 1000) + (seconds * 1000) + (milliseconds * 10);
+}
+
+// 버전 정보 표시 함수
+function displayVersion() {
+    // 버전 정보를 표시할 요소 생성
+    const versionElement = document.createElement('div');
+    versionElement.className = 'version-info';
+    versionElement.textContent = `버전 ${VERSION}`;
+    versionElement.style.position = 'absolute';
+    versionElement.style.bottom = '10px';
+    versionElement.style.right = '10px';
+    versionElement.style.fontSize = '12px';
+    versionElement.style.color = '#666';
+    versionElement.style.opacity = '0.8';
+    
+    // 인트로 화면에 추가
+    introScreen.appendChild(versionElement);
 } 
