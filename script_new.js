@@ -103,6 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 초기화 함수 호출
     initGame();
     
+    // 기본 난이도를 '쉬움'으로 설정
+    setDifficultyIntro('easy');
+    setDifficulty('easy'); // 게임 화면에서도 '쉬움' 난이도로 설정
+    
     // 인트로 화면 이벤트 설정
     startGameButton.addEventListener('click', startFromIntro);
     easyButtonIntro.addEventListener('click', () => setDifficultyIntro('easy'));
@@ -146,6 +150,9 @@ function initGame() {
     gamePaused = false;
     currentTarget = 1;
     mistakes = 0;
+    
+    // 기본 난이도를 '쉬움'으로 설정
+    maxNumber = 20;
     
     // 타이머 초기화
     resetTimer();
@@ -650,45 +657,52 @@ gameBoard.addEventListener('touchmove', function(e) {
 
 // 랭킹 화면 처리 함수
 function showRanking() {
-    // 난이도에 따른 랭킹 키 설정
-    const difficultyKey = getDifficultyKey();
-    rankingDifficultySelect.value = difficultyKey.split('_')[1];
-    
-    // 랭킹 모드 토글 버튼 추가
-    if (!document.getElementById('ranking-mode-toggle')) {
-        const toggleButton = document.createElement('button');
-        toggleButton.id = 'ranking-mode-toggle';
-        toggleButton.className = 'ranking-mode-toggle';
-        toggleButton.textContent = currentRankingMode === 'online' ? '로컬 랭킹 보기' : '온라인 랭킹 보기';
-        toggleButton.addEventListener('click', toggleRankingMode);
-        
-        const rankingHeader = document.querySelector('.ranking-title');
-        rankingHeader.parentNode.insertBefore(toggleButton, rankingHeader.nextSibling);
-    } else {
-        document.getElementById('ranking-mode-toggle').textContent = 
-            currentRankingMode === 'online' ? '로컬 랭킹 보기' : '온라인 랭킹 보기';
-    }
-    
-    // 랭킹 화면 표시
     rankingScreen.classList.remove('hidden');
+    rankingScreen.style.display = 'block';
     
-    // 랭킹 데이터 업데이트
+    // 토스트 형태로 스타일링
+    rankingScreen.style.position = 'fixed';
+    rankingScreen.style.top = '50%';
+    rankingScreen.style.left = '50%';
+    rankingScreen.style.transform = 'translate(-50%, -50%)';
+    rankingScreen.style.width = '80%';
+    rankingScreen.style.maxWidth = '500px';
+    rankingScreen.style.maxHeight = '80%';
+    rankingScreen.style.zIndex = '1000';
+    rankingScreen.style.boxShadow = '0 0 20px rgba(0, 0, 0, 0.7)';
+    rankingScreen.style.borderRadius = '15px';
+    rankingScreen.style.overflow = 'auto';
+    rankingScreen.style.padding = '20px';
+    rankingScreen.style.backgroundColor = '#fff';
+    
+    // 배경 어둡게 처리
+    const overlay = document.createElement('div');
+    overlay.id = 'ranking-overlay';
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    overlay.style.zIndex = '999';
+    document.body.appendChild(overlay);
+    
+    // 오버레이 클릭 시 랭킹 닫기
+    overlay.addEventListener('click', hideRanking);
+    
     updateRankingDisplay();
 }
 
-// 랭킹 모드 전환
-function toggleRankingMode() {
-    currentRankingMode = currentRankingMode === 'online' ? 'local' : 'online';
-    const toggleButton = document.getElementById('ranking-mode-toggle');
-    if (toggleButton) {
-        toggleButton.textContent = currentRankingMode === 'online' ? '로컬 랭킹 보기' : '온라인 랭킹 보기';
-    }
-    updateRankingDisplay();
-}
-
-// 랭킹 화면에서 보이지 않기
+// 랭킹 화면 숨기기
 function hideRanking() {
     rankingScreen.classList.add('hidden');
+    rankingScreen.style.display = 'none';
+    
+    // 배경 오버레이 제거
+    const overlay = document.getElementById('ranking-overlay');
+    if (overlay) {
+        overlay.remove();
+    }
 }
 
 // 랭킹 시스템 이벤트 처리
